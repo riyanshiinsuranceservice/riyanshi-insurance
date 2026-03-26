@@ -1,26 +1,75 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@import "./utils.css"
+
+/**
+* Css variables for the theme & tailwind configuration
+*/
+@theme {
+  /* Core Brand Colors */
+  --color-primary: #002045;
+  --color-primary-container: #1A365D;
+  --color-primary-fixed: #D6E4FF;
+  --color-primary-fixed-dim: #ADC7F7;
+
+  --color-secondary: #2C694E;
+  --color-secondary-fixed: #B1F0CE;
+  --color-on-secondary-fixed-variant: #0E5138;
+
+  /* Surface System (No-Line Rule) */
+  --color-surface: #F7F9FB;
+  --color-surface-container-lowest: #FFFFFF;
+  --color-surface-container-low: #F2F4F6;
+  --color-surface-container: #ECEEF0;
+  --color-surface-container-highest: #E6E8EB;
+
+  /* Text */
+  --color-on-surface: #191C1E;
+
+  /* Outline */
+  --color-outline-variant: #C4C6CF;
+
+  /* Typography */
+  --font-display: "Manrope", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-gujarati: "Noto Sans Gujarati", sans-serif;
+
+  /* Radius */
+  --radius-default: 0.5rem; /* 8px */
+  --radius-full: 9999px;
+
+  /* Spacing Scale (Editorial Breathing Room) */
+  --spacing-4: 1rem;
+  --spacing-16: 4rem;
+  --spacing-24: 6rem;
+
+  /* Shadows */
+  --shadow-ambient: 0 20px 40px rgba(25, 28, 30, 0.06);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* 
+*  Base styles for overwriting browser css 
+*/
+@layer base {
+  html {
+    font-family: var(--font-body);
+    background: var(--color-surface);
+    color: var(--color-on-surface);
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    @apply antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    color: var(--color-on-surface);
+  }
+
+  /* Editorial Link Style */
+  a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
 }
