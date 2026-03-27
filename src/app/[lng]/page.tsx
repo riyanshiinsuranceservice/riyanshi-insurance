@@ -1,11 +1,11 @@
-import { HomeFinalCta } from "@/components/home/home-final-cta"
+import { SiteFinalCta } from "@/components/layout/site-final-cta"
 import { HomeHero } from "@/components/home/home-hero"
 import { HomeServicesBento } from "@/components/home/home-services-bento"
 import { HomeTrustHighlights } from "@/components/home/home-trust-highlights"
 import { HomeWhyChoose } from "@/components/home/home-why-choose"
 import { PageWrapper } from "@/components/layout/page-wrapper"
 import { SITE_CONSULT_TEL, SITE_WHATSAPP_HREF } from "@/lib/site-contact"
-import { localizedHref } from "@/routes"
+import { localizedHref, localizedServicesHref } from "@/routes"
 import { getT } from "next-i18next/server"
 
 export default async function Page({ params }: { params: Promise<{ lng: string }> }) {
@@ -53,7 +53,7 @@ export default async function Page({ params }: { params: Promise<{ lng: string }
             title: th("services.life.title"),
             description: th("services.life.description"),
             cta: th("services.life.cta"),
-            learnMoreHref: localizedHref(lng, "services"),
+            learnMoreHref: localizedServicesHref(lng),
           }}
           health={{
             title: th("services.health.title"),
@@ -71,7 +71,7 @@ export default async function Page({ params }: { params: Promise<{ lng: string }
           }}
           customLine={th("services.customLine")}
           viewAllLabel={th("services.viewAll")}
-          viewAllHref={localizedHref(lng, "services")}
+          viewAllHref={localizedServicesHref(lng)}
         />
 
         <HomeWhyChoose
@@ -99,7 +99,7 @@ export default async function Page({ params }: { params: Promise<{ lng: string }
         />
 
         <div id="contact" className="flex flex-col scroll-mt-24">
-          <HomeFinalCta
+          <SiteFinalCta
             title={th("finalCta.title")}
             description={th("finalCta.description")}
             primaryCta={th("finalCta.primary")}

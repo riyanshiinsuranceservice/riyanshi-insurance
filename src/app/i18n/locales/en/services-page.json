@@ -1,0 +1,40 @@
+{
+  "hero": {
+    "eyebrow": "Our expertise",
+    "titleBefore": "We are devoted to your ",
+    "titleEmphasis": "prosperity",
+    "titleAfter": " and protection.",
+    "intro": "We tailor precise insurance and investment plans to every client's needs.",
+    "imageAlt": "Professional financial advisors discussing plans in a bright modern office"
+  },
+  "cards": {
+    "life": {
+      "badge": "Secure",
+      "title": "Life insurance",
+      "tagline": "Financial security for your family's future",
+      "description": "Term and endowment policies so your family's lifestyle continues and their dreams stay within reach—even when you're not there.",
+      "learnMore": "Learn more"
+    },
+    "health": {
+      "badge": "Cashless",
+      "title": "Health insurance",
+      "tagline": "Protection from hospital costs—with cashless care",
+      "description": "Leave financial worry at the door when illness strikes. Cashless treatment at leading hospitals and family floater plans available.",
+      "learnMore": "Learn more"
+    },
+    "investment": {
+      "badge": "Wealth",
+      "title": "Investment plans",
+      "tagline": "Savings + protection + returns—smart planning",
+      "description": "Secure, growth-oriented investment plans for goals like education, marriage, or retirement.",
+      "learnMore": "Learn more"
+    },
+    "vehicle": {
+      "badge": "Protect",
+      "title": "Vehicle insurance",
+      "tagline": "Complete protection for your vehicle",
+      "description": "Third-party and comprehensive cover for cars and two-wheelers, with prompt claim support for accidents or theft.",
+      "learnMore": "Learn more"
+    }
+  }
+}

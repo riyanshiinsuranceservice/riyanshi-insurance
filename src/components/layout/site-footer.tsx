@@ -1,6 +1,6 @@
 import { SiteLogo } from "@/components/layout/site-logo"
 import { AppLink } from "@/components/ui/app-link"
-import { localizedHref } from "@/routes"
+import { localizedHref, localizedServicesHref } from "@/routes"
 import { getT } from "next-i18next/server"
 
 type SiteFooterProps = {
@@ -27,10 +27,10 @@ async function SiteFooter({ lng }: SiteFooterProps) {
     {
       title: t("footer.servicesTitle"),
       links: [
-        { label: t("footer.svcLife"), href: localizedHref(lng, "services") },
-        { label: t("footer.svcHealth"), href: localizedHref(lng, "services") },
-        { label: t("footer.svcSip"), href: localizedHref(lng, "services") },
-        { label: t("footer.svcTax"), href: localizedHref(lng, "services") },
+        { label: t("footer.svcLife"), href: localizedServicesHref(lng) },
+        { label: t("footer.svcHealth"), href: localizedServicesHref(lng) },
+        { label: t("footer.svcSip"), href: localizedServicesHref(lng) },
+        { label: t("footer.svcTax"), href: localizedServicesHref(lng) },
       ],
     },
     {
@@ -53,7 +53,7 @@ async function SiteFooter({ lng }: SiteFooterProps) {
 
         {sections.map((section, sectionIndex) => (
           <div key={`footer-section-${sectionIndex}-${section.title}`}>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-[0.05em] text-brand-secondary">
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-[0.05em]">
               {section.title}
             </h3>
             <ul className="space-y-2">

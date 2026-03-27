@@ -127,6 +127,14 @@ Example:
 - Use **composition**
 - Keep files focused
 
+### Shared closing CTA (mandatory)
+
+- **Do not** add a new bottom-of-page CTA component per route or duplicate CTA copy in page-specific i18n files.
+- **Do** reuse **`SiteFinalCta`** (`@/components/layout/site-final-cta`) for every marketing page that needs the Stitch-style trust-gradient band (same as the home page).
+- **Strings:** always `home` namespace keys `finalCta.title`, `finalCta.description`, `finalCta.primary`, `finalCta.secondary` via `getT("home", { lng })`.
+- **Links:** same as home—**`SITE_WHATSAPP_HREF`** for the primary action and **`SITE_CONSULT_TEL`** for the secondary action (from `@/lib/site-contact`). If a future page truly needs different targets, extend the shared component with optional props instead of forking markup.
+- **Composition:** place `SiteFinalCta` at the end of the page’s `PageWrapper` (or equivalent); only wrap with `id="contact"` / `scroll-mt-*` when the page is the locale root and you need hash navigation to land on the band.
+
 ---
 
 ## ⚙️ Server vs Client
@@ -226,6 +234,7 @@ Follow:
 - ❌ No duplication
 - ❌ No large components
 - ❌ No hardcoded internal routes — use `@/routes` (`ROUTE`, `localizedHref`)
+- ❌ No page-specific closing CTA components or duplicate CTA copy — use **`SiteFinalCta`** + **`home.finalCta`** + **`@/lib/site-contact`** (see **Shared closing CTA** above)
 
 ---
 

@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/cta-banner"
 import { cn } from "@/lib/utils"
 
-type HomeFinalCtaProps = {
+type SiteFinalCtaProps = {
   title: string
   description: string
   primaryCta: string
@@ -17,18 +17,18 @@ type HomeFinalCtaProps = {
 }
 
 /**
- * What: closing trust-gradient band with dual actions.
- * Why: reuses `CtaBanner` tokens instead of duplicating gradient markup.
- * What for: final conversion push on the home page.
+ * What: site-wide closing trust-gradient band with dual actions.
+ * Why: reuses `CtaBanner` tokens; one implementation for every marketing route.
+ * What for: home, services, and future pages—typically `home.finalCta` copy and `@/lib/site-contact` hrefs.
  */
-function HomeFinalCta({
+function SiteFinalCta({
   title,
   description,
   primaryCta,
   secondaryCta,
   primaryHref,
   secondaryHref,
-}: HomeFinalCtaProps) {
+}: SiteFinalCtaProps) {
   const primaryIsExternal = primaryHref.startsWith("http")
   const secondaryIsExternal = secondaryHref.startsWith("http")
 
@@ -91,4 +91,4 @@ function HomeFinalCta({
   )
 }
 
-export { HomeFinalCta }
+export { SiteFinalCta, type SiteFinalCtaProps }

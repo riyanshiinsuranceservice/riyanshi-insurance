@@ -8,9 +8,19 @@ import type { RouteNode } from "@/routes/utils/api-routes"
 export const ROUTE_DEFINITIONS = {
   en: {
     path: "/en",
+    nestedPath: {
+      services: {
+        path: "/services",
+      },
+    },
   },
   gu: {
     path: "/gu",
+    nestedPath: {
+      services: {
+        path: "/services",
+      },
+    },
   },
 } as const satisfies Record<string, RouteNode>
 
