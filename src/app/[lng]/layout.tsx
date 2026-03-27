@@ -22,7 +22,7 @@ export default async function RootLayout({
   const { lng } = await params
 
   // Initialize i18n instance and extract resources for client
-  const { i18n } = await getT()
+  const { i18n } = await getT('common', { lng })
   const resources = getResources(i18n)
 
   return (

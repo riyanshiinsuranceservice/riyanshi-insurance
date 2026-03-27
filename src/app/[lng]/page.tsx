@@ -1,25 +1,19 @@
-'use client'
 import LanguageToggle from "@/components/language-toggle";
-import { Translation } from "next-i18next/pages";
+import { getT } from "next-i18next/server";
 
-async function MyComponent({
-    t, i18n, params
+export default async function Page({
+  params,
 }: {
-    t: any;
-    i18n: any;
-    params: { lng: string }
+  params: Promise<{ lng: string }>;
 }) {
+  const { lng } = await params;
+  const { t } = await getT("common", { lng });
 
-    return (
-        <Translation i18n={i18n}>
-            {(t) => (<>
-                <h1>{t("welcome")}</h1>
-                <p>{t("hello")}</p>
-                < LanguageToggle currentLng={params.lng} />
-            </>)}
-
-        </Translation>
-    );
+  return (
+    <>
+      <h1>{t("welcome")}</h1>
+      <p>{t("hello")}</p>
+      <LanguageToggle currentLng={lng} />
+    </>
+  );
 }
-
-export default MyComponent
