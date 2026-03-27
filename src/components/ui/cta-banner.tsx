@@ -48,7 +48,7 @@ function CtaBannerTitle({ className, ...props }: React.ComponentProps<"h2">) {
     <h2
       data-slot="cta-banner-title"
       className={cn(
-        "font-[var(--font-display)] text-3xl font-bold tracking-tight md:text-4xl",
+        "font-[var(--font-display)] text-3xl font-bold tracking-tight text-white md:text-4xl",
         className
       )}
       {...props}
@@ -61,7 +61,7 @@ function CtaBannerDescription({ className, ...props }: React.ComponentProps<"p">
     <p
       data-slot="cta-banner-description"
       className={cn(
-        "mt-4 max-w-2xl text-lg text-[color:color-mix(in_srgb,white_88%,transparent)]",
+        "mt-4 max-w-2xl text-lg text-[color:color-mix(in_srgb,var(--color-primary-fixed)_78%,white_22%)]",
         className
       )}
       {...props}

@@ -15,13 +15,15 @@ const buttonVariants = cva(
         primary:
           "bg-[linear-gradient(135deg,var(--color-primary),var(--color-primary-container))] text-white shadow-[0_8px_24px_rgba(0,32,69,0.18)] hover:brightness-110",
         secondary:
-          "bg-[var(--color-surface-container-highest)] text-[var(--color-secondary)] hover:bg-[var(--color-surface-container-low)] dark:bg-white/10 dark:text-[var(--color-secondary-fixed)] dark:hover:bg-white/15",
+          "bg-slate-200 text-slate-900 hover:bg-slate-300 dark:bg-white/10 dark:text-[var(--color-secondary-fixed)] dark:hover:bg-white/15",
         ghost:
           "bg-transparent text-[var(--color-primary)] hover:bg-[var(--color-surface-container-low)] dark:text-[var(--color-primary-fixed)] dark:hover:bg-white/10",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90 dark:bg-destructive dark:text-white",
         outline:
           "border border-[color:color-mix(in_srgb,var(--color-outline-variant)_35%,transparent)] bg-transparent text-[var(--color-on-surface)] hover:bg-[var(--color-surface-container-low)] dark:text-foreground dark:hover:bg-white/10",
+        mintSolid:
+          "border-0 bg-[var(--color-secondary-fixed)] text-slate-950 shadow-[0_4px_18px_rgba(0,32,69,0.22)] hover:bg-[var(--color-secondary-fixed)] hover:brightness-[0.97] hover:shadow-[0_6px_22px_rgba(0,32,69,0.28)]",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
@@ -29,6 +31,7 @@ const buttonVariants = cva(
         sm: "h-8 gap-1.5 px-3 text-xs",
         lg: "h-12 gap-2.5 px-6 text-base",
         icon: "size-10",
+        "icon-sm": "size-8 gap-0 p-0 [&_svg]:size-4",
       },
     },
     defaultVariants: {
@@ -64,7 +67,7 @@ function Button({
       data-size={size}
       aria-busy={loading || undefined}
       disabled={isDisabled}
-      className={cn(buttonVariants({ variant, size, className }))}
+      className={cn(buttonVariants({ variant, size }), className)}
       {...props}
     >
       {loading ? (

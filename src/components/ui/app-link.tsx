@@ -5,14 +5,14 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const appLinkVariants = cva(
-  "inline-flex items-center gap-1.5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+  "inline-flex items-center gap-1.5 transition-[color,text-decoration-color,text-decoration-thickness] duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background",
   {
     variants: {
       variant: {
         inline:
           "text-[var(--color-primary)] underline decoration-[1.5px] underline-offset-2 hover:text-[var(--color-primary-container)] dark:text-[var(--color-primary-fixed)]",
         navigation:
-          "text-[var(--color-on-surface)] no-underline hover:text-[var(--color-primary)] dark:text-foreground dark:hover:text-[var(--color-primary-fixed)]",
+          "text-[var(--color-on-surface)] underline-offset-[0.35rem] decoration-[var(--color-primary)] no-underline hover:text-[var(--color-primary)] hover:underline hover:decoration-2 dark:text-foreground dark:decoration-[var(--color-primary-fixed)] dark:hover:text-[var(--color-primary-fixed)]",
         external:
           "text-[var(--color-primary)] underline decoration-[1.5px] underline-offset-2 hover:text-[var(--color-secondary)] dark:text-[var(--color-primary-fixed)] dark:hover:text-[var(--color-secondary-fixed)]",
       },

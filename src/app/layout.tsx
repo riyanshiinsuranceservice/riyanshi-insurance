@@ -1,16 +1,24 @@
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Inter, Manrope, Noto_Sans_Gujarati } from "next/font/google"
 import "./globals.css"
-import ContextProviders from "@/components/providers"
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
 })
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const manrope = Manrope({
   subsets: ["latin"],
+  variable: "--font-manrope",
+  display: "swap",
+})
+
+const notoSansGujarati = Noto_Sans_Gujarati({
+  subsets: ["gujarati"],
+  weight: ["400", "700"],
+  variable: "--font-noto-gujarati",
+  display: "swap",
 })
 
 export const metadata: Metadata = {
@@ -26,9 +34,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${manrope.variable} ${notoSansGujarati.variable} h-full scroll-smooth antialiased motion-reduce:scroll-auto`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="flex min-h-full flex-col font-sans">{children}</body>
     </html>
   )
 }

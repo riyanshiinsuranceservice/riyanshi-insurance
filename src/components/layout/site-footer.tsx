@@ -1,41 +1,64 @@
+import { SiteLogo } from "@/components/layout/site-logo"
 import { AppLink } from "@/components/ui/app-link"
-
-type FooterLink = {
-  label: string
-  href: string
-}
-
-type FooterSection = {
-  title: string
-  links: FooterLink[]
-}
+import { localizedHref } from "@/routes"
+import { getT } from "next-i18next/server"
 
 type SiteFooterProps = {
-  brand: string
-  description: string
-  sections: FooterSection[]
-  copyright: string
+  lng: string
 }
 
-function SiteFooter({ brand, description, sections, copyright }: SiteFooterProps) {
+/**
+ * What: global footer columns from `common` (server `getT`).
+ * Why: no translation props from each page; only the active locale segment is passed.
+ */
+async function SiteFooter({ lng }: SiteFooterProps) {
+  const { t } = await getT("common", { lng })
+
+  const sections = [
+    {
+      title: t("footer.quickLinks"),
+      links: [
+        { label: t("footer.privacy"), href: "#" },
+        { label: t("footer.terms"), href: "#" },
+        { label: t("footer.officeAhmedabad"), href: "#" },
+        { label: t("footer.officeSurat"), href: "#" },
+      ],
+    },
+    {
+      title: t("footer.servicesTitle"),
+      links: [
+        { label: t("footer.svcLife"), href: localizedHref(lng, "services") },
+        { label: t("footer.svcHealth"), href: localizedHref(lng, "services") },
+        { label: t("footer.svcSip"), href: localizedHref(lng, "services") },
+        { label: t("footer.svcTax"), href: localizedHref(lng, "services") },
+      ],
+    },
+    {
+      title: t("footer.connect"),
+      links: [{ label: t("footer.address"), href: localizedHref(lng, "contact") }],
+    },
+  ]
+
   return (
     <footer className="mt-16 w-full bg-[var(--color-surface-container-low)] text-[var(--color-on-surface)]">
       <div className="mx-auto grid w-full max-w-7xl gap-8 px-6 py-12 md:grid-cols-4">
         <div className="md:col-span-1">
-          <h2 className="mb-3 font-[var(--font-display)] text-lg font-bold">{brand}</h2>
+          <h2 className="mb-3">
+            <SiteLogo label={t("brand")} size="lg" />
+          </h2>
           <p className="text-sm leading-6 text-neutral-700 dark:text-neutral-300">
-            {description}
+            {t("footer.description")}
           </p>
         </div>
 
-        {sections.map((section) => (
-          <div key={section.title}>
+        {sections.map((section, sectionIndex) => (
+          <div key={`footer-section-${sectionIndex}-${section.title}`}>
             <h3 className="mb-4 text-sm font-semibold uppercase tracking-[0.05em] text-[var(--color-secondary)]">
               {section.title}
             </h3>
             <ul className="space-y-2">
-              {section.links.map((link) => (
-                <li key={link.href}>
+              {section.links.map((link, linkIndex) => (
+                <li key={`footer-link-${sectionIndex}-${linkIndex}-${link.label}`}>
                   <AppLink href={link.href} variant="navigation" size="sm">
                     {link.label}
                   </AppLink>
@@ -47,7 +70,7 @@ function SiteFooter({ brand, description, sections, copyright }: SiteFooterProps
       </div>
 
       <div className="border-t border-[color:color-mix(in_srgb,var(--color-outline-variant)_25%,transparent)] px-6 py-4 text-center text-xs text-neutral-600 dark:text-neutral-400">
-        {copyright}
+        {t("footer.copyright")}
       </div>
     </footer>
   )

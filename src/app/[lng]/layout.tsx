@@ -1,3 +1,4 @@
+import type { ReactNode } from "react"
 import {
   initServerI18next,
   getT,
@@ -7,6 +8,9 @@ import {
 import i18nConfig from "../../../i18n.config"
 import AppI18nProvider from "@/components/providers/i18n-provider"
 import ContextProviders from "@/components/providers"
+import { SiteFloatingWhatsApp } from "@/components/layout/site-floating-whatsapp"
+import { SiteFooter } from "@/components/layout/site-footer"
+import { SiteHeader } from "@/components/layout/site-header"
 
 // Initialize i18n on the server (runs once per request lifecycle)
 initServerI18next(i18nConfig)
@@ -20,19 +24,24 @@ export default async function RootLayout({
   children,
   params,
 }: {
-  children: React.ReactNode
+  children: ReactNode
   params: Promise<{ lng: string }>
 }) {
-  // Get current language from dynamic route
   const { lng } = await params
 
-  // Initialize i18n instance and extract resources for client
-  const { i18n } = await getT("common", { lng })
+  const { i18n } = await getT(["common", "home"], { lng })
   const resources = getResources(i18n)
 
   return (
     <AppI18nProvider language={lng} resources={resources}>
-      <ContextProviders>{children}</ContextProviders>
+      <ContextProviders>
+        <div className="min-h-screen bg-[var(--color-surface)] text-[var(--color-on-surface)]">
+          <SiteHeader />
+          {children}
+          <SiteFooter lng={lng} />
+          <SiteFloatingWhatsApp />
+        </div>
+      </ContextProviders>
     </AppI18nProvider>
   )
 }

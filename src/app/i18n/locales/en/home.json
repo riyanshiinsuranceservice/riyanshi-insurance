@@ -1,0 +1,78 @@
+{
+  "hero": {
+    "badge": "TRUSTED FINANCIAL ADVISORS",
+    "title": "Your family’s security, our responsibility",
+    "subtitle": "Trusted life, health, and future-focused insurance solutions. Securing your tomorrow, starting today.",
+    "ctaPrimary": "Get free advice today",
+    "ctaSecondary": "Contact now",
+    "cardLabel": "Active claims",
+    "cardValue": "₹12.5 Cr+",
+    "cardSub": "Settled this year"
+  },
+  "trust": {
+    "item1": {
+      "title": "Trust",
+      "description": "Thousands of families protected across Gujarat."
+    },
+    "item2": {
+      "title": "Fast claims",
+      "description": "Hassle-free settlement process support."
+    },
+    "item3": {
+      "title": "Guidance",
+      "description": "Expert financial planning tailored for you."
+    }
+  },
+  "services": {
+    "eyebrow": "What we offer",
+    "title": "Our services",
+    "intro": "Comprehensive coverage for every aspect of your life and wealth building.",
+    "life": {
+      "title": "Life insurance",
+      "description": "Life insurance for your family’s bright future.",
+      "cta": "Learn more"
+    },
+    "health": {
+      "title": "Health insurance",
+      "description": "Leave medical expense worries behind—get the best care."
+    },
+    "investment": {
+      "title": "Investment",
+      "description": "Grow your money safely and steadily."
+    },
+    "vehicle": {
+      "title": "Vehicle insurance",
+      "description": "Complete protection and roadside assistance for your vehicle.",
+      "cta": "Get quote"
+    },
+    "customLine": "Looking for customized solutions?",
+    "viewAll": "View all insurance products"
+  },
+  "why": {
+    "quote": "“Our goal isn’t just to sell a policy—it’s to secure your future.”",
+    "eyebrow": "Our core values",
+    "title": "Why choose us?",
+    "point1": {
+      "title": "Personalized guidance",
+      "description": "Personalized guidance based on your financial goals."
+    },
+    "point2": {
+      "title": "Fast claim support",
+      "description": "Dedicated support during claims for quick settlements."
+    },
+    "point3": {
+      "title": "Trusted insurer partnerships",
+      "description": "Partnerships with India’s top-rated insurance providers."
+    },
+    "point4": {
+      "title": "Clear, simple explanations",
+      "description": "Transparent policies with no hidden terms."
+    }
+  },
+  "finalCta": {
+    "title": "Take the first step toward a secure future today",
+    "description": "Click the button below to get expert advice or call us.",
+    "primary": "Book free advice",
+    "secondary": "Contact us"
+  }
+}

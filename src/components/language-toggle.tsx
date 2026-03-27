@@ -1,21 +1,52 @@
-import { AppLink } from "@/components/ui/app-link"
+"use client"
 
-export default function LanguageToggle({ currentLng }: { currentLng: string }) {
+import { useParams } from "next/navigation"
+import { useT } from "next-i18next/client"
+
+import { AppLink } from "@/components/ui/app-link"
+import { cn } from "@/lib/utils"
+import { ROUTE } from "@/routes"
+
+type LanguageToggleProps = {
+  className?: string
+}
+
+/**
+ * What: EN / GU links with labels from `common`.
+ * Why: used in the site header everywhere; reads locale from the `[lng]` segment.
+ */
+export default function LanguageToggle({ className }: LanguageToggleProps) {
+  const { t } = useT("common")
+  const params = useParams()
+  const currentLng = typeof params?.lng === "string" ? params.lng : "gu"
+
   return (
-    <div className="mt-5 flex gap-3">
+    <div className={cn("flex items-center gap-2 text-sm", className)}>
       <AppLink
-        href="/en"
+        href={ROUTE.en.path}
         variant="navigation"
-        className={currentLng === "en" ? "font-semibold text-[var(--color-primary)]" : ""}
+        size="sm"
+        className={cn(
+          "rounded-full px-3 py-1.5 no-underline transition-colors",
+          currentLng === "en"
+            ? "bg-[var(--color-surface-container-highest)] font-semibold text-[var(--color-primary)]"
+            : "text-[var(--color-on-surface-variant)] hover:text-[var(--color-primary)]"
+        )}
       >
-        English
+        {t("language.english")}
       </AppLink>
       <AppLink
-        href="/gu"
+        href={ROUTE.gu.path}
         variant="navigation"
-        className={currentLng === "gu" ? "font-semibold text-[var(--color-primary)]" : ""}
+        size="sm"
+        className={cn(
+          "rounded-full px-3 py-1.5 no-underline transition-colors",
+          currentLng === "gu"
+            ? "bg-[var(--color-surface-container-highest)] font-semibold text-[var(--color-primary)]"
+            : "text-[var(--color-on-surface-variant)] hover:text-[var(--color-primary)]"
+        )}
       >
-        ગુજરાતી
+        {t("language.gujarati")}
       </AppLink>
     </div>
   )

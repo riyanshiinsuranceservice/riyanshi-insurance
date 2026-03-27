@@ -1,4 +1,37 @@
 {
   "welcome": "Welcome",
-  "hello": "Hello"
+  "hello": "Hello",
+  "brand": "Riyanshi Insurance & Investment",
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "header": {
+    "cta": "Call Now"
+  },
+  "language": {
+    "english": "English",
+    "gujarati": "ગુજરાતી"
+  },
+  "a11y": {
+    "whatsappContact": "Contact us on WhatsApp"
+  },
+  "footer": {
+    "description": "Trusted partner for insurance and investment solutions in Gujarat since 2010. Providing peace of mind to thousands of families.",
+    "quickLinks": "Quick links",
+    "servicesTitle": "Services",
+    "connect": "Connect with us",
+    "address": "A-402, Business Hub, Ahmedabad, Gujarat.",
+    "privacy": "Privacy policy",
+    "terms": "Terms of service",
+    "officeAhmedabad": "Ahmedabad office",
+    "officeSurat": "Surat office",
+    "svcLife": "Life insurance",
+    "svcHealth": "Health & medical",
+    "svcSip": "SIP & mutual funds",
+    "svcTax": "Tax planning",
+    "copyright": "© 2026 Riyanshi Insurance & Investment. All rights reserved."
+  }
 }

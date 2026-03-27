@@ -1,4 +1,78 @@
 {
-  "welcome": "સ્વાગત છે",
-  "hello": "નમસ્તે"
+  "hero": {
+    "badge": "વિશ્વસનીય નાણાકીય સલાહકાર",
+    "title": "તમારા પરિવારની સુરક્ષા, અમારી જવાબદારી",
+    "subtitle": "જીવન, આરોગ્ય અને ભવિષ્ય માટે વિશ્વસનીય ઇન્શ્યોરન્સ સોલ્યુશન્સ. Securing your tomorrow, starting today.",
+    "ctaPrimary": "આજેજ ફ્રી સલાહ મેળવો",
+    "ctaSecondary": "Contact Now",
+    "cardLabel": "Active Claims",
+    "cardValue": "₹12.5 Cr+",
+    "cardSub": "Settled this year"
+  },
+  "trust": {
+    "item1": {
+      "title": "વિશ્વાસ (Trust)",
+      "description": "Thousands of families protected across Gujarat."
+    },
+    "item2": {
+      "title": "ઝડપી ક્લેમ",
+      "description": "Hassle-free settlement process support."
+    },
+    "item3": {
+      "title": "માર્ગદર્શન",
+      "description": "Expert financial planning tailored for you."
+    }
+  },
+  "services": {
+    "eyebrow": "What We Offer",
+    "title": "અમારી સેવાઓ (Services)",
+    "intro": "Comprehensive coverage for every aspect of your life and wealth building.",
+    "life": {
+      "title": "Life Insurance",
+      "description": "તમારા પરિવારના ઉજ્જવળ ભવિષ્ય માટે જીવન વીમો.",
+      "cta": "Learn More"
+    },
+    "health": {
+      "title": "Health Insurance",
+      "description": "તબીબી ખર્ચની ચિંતા છોડો, શ્રેષ્ઠ સારવાર મેળવો."
+    },
+    "investment": {
+      "title": "Investment",
+      "description": "તમારા પૈસાને સુરક્ષિત રીતે વધારો."
+    },
+    "vehicle": {
+      "title": "Vehicle Insurance",
+      "description": "તમારા વાહન માટે સંપૂર્ણ સુરક્ષા અને રોડ-સાઇડ આસિસ્ટન્સ.",
+      "cta": "Get Quote"
+    },
+    "customLine": "Looking for customized solutions?",
+    "viewAll": "View All Insurance Products"
+  },
+  "why": {
+    "quote": "“અમારું લક્ષ્ય માત્ર પોલિસી વેચવાનું નથી, પણ તમારા ભવિષ્યને સુરક્ષિત કરવાનું છે.”",
+    "eyebrow": "Our Core Values",
+    "title": "અમારી પસંદગી શા માટે? (Why Choose Us)",
+    "point1": {
+      "title": "વ્યક્તિગત માર્ગદર્શન",
+      "description": "Personalized guidance based on your financial goals."
+    },
+    "point2": {
+      "title": "ઝડપી ક્લેમ સપોર્ટ",
+      "description": "Dedicated support during claims for quick settlements."
+    },
+    "point3": {
+      "title": "વિશ્વસનીય કંપનીઓ સાથે જોડાણ",
+      "description": "Partnerships with India's top-rated insurance providers."
+    },
+    "point4": {
+      "title": "સરળ અને સ્પષ્ટ સમજણ",
+      "description": "Transparent policies with no hidden terms."
+    }
+  },
+  "finalCta": {
+    "title": "આજે જ સુરક્ષિત ભવિષ્ય તરફ પહેલું પગલું ભરો",
+    "description": "નિષ્ણાતની સલાહ મેળવવા માટે નીચેના બટન પર ક્લિક કરો અથવા અમને કૉલ કરો.",
+    "primary": "ફ્રી સલાહ બુક કરો",
+    "secondary": "Contact Us"
+  }
 }

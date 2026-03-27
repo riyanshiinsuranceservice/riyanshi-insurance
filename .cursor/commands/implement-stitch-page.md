@@ -91,11 +91,20 @@ Before creating anything new:
 
 ## 🏗 Step 4: Architecture Rules
 
+### App routes (single source of truth)
+
+- **Never hardcode** internal URLs such as `"/en"`, `"/gu"`, or `` `/${lng}#contact` `` in components or pages.
+- Import from **`@/routes`** instead:
+  - **`ROUTE`** — resolved paths (e.g. `ROUTE.en.path`, `ROUTE.gu.path`) and **`ROUTE.hash`** for in-page fragments (`about`, `services`, `contact`).
+  - **`localizedHref(lng, fragment?)`** — builds the correct locale home URL and optional hash (e.g. `localizedHref(lng, "contact")`).
+- When you add a new page or anchor, extend **`src/routes/constants/api-routes.ts`** (`ROUTE_DEFINITIONS` and/or `ROUTE_HASH`), then use the updated **`ROUTE`** / **`localizedHref`** everywhere. Do not scatter path strings.
+
 ### Folder Structure (STRICT)
 
 ```
 /app/...                → routing + page composition ONLY
 /src/components/...    → ALL UI components
+/src/routes/           → canonical paths (index exports ROUTE + helpers; utils + constants within)
 ```
 
 Example:
@@ -216,6 +225,7 @@ Follow:
 - ❌ No ignoring DESIGN.md
 - ❌ No duplication
 - ❌ No large components
+- ❌ No hardcoded internal routes — use `@/routes` (`ROUTE`, `localizedHref`)
 
 ---
 
