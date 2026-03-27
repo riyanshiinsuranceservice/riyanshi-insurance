@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 @utility display-lg {
   font-family: var(--font-display);
   font-size: 3.5rem;
@@ -183,26 +182,32 @@
 @theme {
   /* Core Brand Colors */
   --color-primary: #002045;
-  --color-primary-container: #1A365D;
-  --color-primary-fixed: #D6E4FF;
-  --color-primary-fixed-dim: #ADC7F7;
+  --color-primary-container: #1a365d;
+  --color-primary-fixed: #d6e4ff;
+  --color-primary-fixed-dim: #adc7f7;
 
-  --color-secondary: #2C694E;
-  --color-secondary-fixed: #B1F0CE;
-  --color-on-secondary-fixed-variant: #0E5138;
+  --color-secondary: #2c694e;
+  --color-secondary-fixed: #b1f0ce;
+  --color-on-secondary-fixed-variant: #0e5138;
+
+  /* Tertiary (warm editorial accents — services / bento) */
+  --color-tertiary: #321b00;
+  --color-tertiary-fixed: #ffddba;
+  --color-tertiary-fixed-dim: #f2bc82;
+  --color-on-tertiary-fixed-variant: #633f0f;
 
   /* Surface System (No-Line Rule) */
-  --color-surface: #F7F9FB;
-  --color-surface-container-lowest: #FFFFFF;
-  --color-surface-container-low: #F2F4F6;
-  --color-surface-container: #ECEEF0;
-  --color-surface-container-highest: #E6E8EB;
+  --color-surface: #f7f9fb;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f2f4f6;
+  --color-surface-container: #eceef0;
+  --color-surface-container-highest: #e6e8eb;
 
   /* Text */
-  --color-on-surface: #191C1E;
+  --color-on-surface: #191c1e;
 
   /* Outline */
-  --color-outline-variant: #C4C6CF;
+  --color-outline-variant: #c4c6cf;
 
   /* Typography */
   --font-display: "Manrope", sans-serif;
@@ -226,8 +231,6 @@
 
 @import "shadcn/tailwind.css";
 
-
-
 @custom-variant dark (&:is(.dark *));
 
 /* 
@@ -245,7 +248,10 @@
     @apply antialiased bg-background text-foreground;
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-display);
     color: var(--color-on-surface);
   }

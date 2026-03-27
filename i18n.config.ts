@@ -1,22 +1,22 @@
-import type { I18nConfig } from 'next-i18next/proxy'
+import type { I18nConfig } from "next-i18next/proxy"
 
 const resources = {
   en: {
-    common: () => import('./src/app/i18n/locales/en/common.json'),
+    common: () => import("./src/app/i18n/locales/en/common.json"),
   },
   gu: {
-    common: () => import('./src/app/i18n/locales/gu/common.json'),
+    common: () => import("./src/app/i18n/locales/gu/common.json"),
   },
 }
 
-
 const i18nConfig: I18nConfig = {
-  supportedLngs: ['gu', 'en'],
-  fallbackLng: 'gu',
-  defaultNS: 'common',
-  ns: ['common'],
+  supportedLngs: ["gu", "en"],
+  fallbackLng: "gu",
+  defaultNS: "common",
+  ns: ["common"],
 
   resourceLoader: (language: string, namespace: string) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return (resources as any)?.[language]?.[namespace]?.()
   },
 }

@@ -1,7 +1,12 @@
-import { initServerI18next, getT, getResources, generateI18nStaticParams } from 'next-i18next/server'
-import i18nConfig from '../../../i18n.config'
-import AppI18nProvider from '@/components/providers/i18n-provider'
-import ContextProviders from '@/components/providers'
+import {
+  initServerI18next,
+  getT,
+  getResources,
+  generateI18nStaticParams,
+} from "next-i18next/server"
+import i18nConfig from "../../../i18n.config"
+import AppI18nProvider from "@/components/providers/i18n-provider"
+import ContextProviders from "@/components/providers"
 
 // Initialize i18n on the server (runs once per request lifecycle)
 initServerI18next(i18nConfig)
@@ -22,14 +27,12 @@ export default async function RootLayout({
   const { lng } = await params
 
   // Initialize i18n instance and extract resources for client
-  const { i18n } = await getT('common', { lng })
+  const { i18n } = await getT("common", { lng })
   const resources = getResources(i18n)
 
   return (
     <AppI18nProvider language={lng} resources={resources}>
-      <ContextProviders>
-        {children}
-      </ContextProviders>
+      <ContextProviders>{children}</ContextProviders>
     </AppI18nProvider>
   )
 }

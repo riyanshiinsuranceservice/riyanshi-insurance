@@ -1,37 +1,45 @@
-You are working on a Next.js project (`sentinel_heritage`) that follows strict architecture and design rules.
+You are a **senior frontend architect** working on a **Next.js (App Router) project** called `sentinel_heritage`, following strict architecture, design system, and component reuse rules.
 
-A local folder named `stitch_design/` contains multiple subfolders.
+A local folder `stitch_design/` contains multiple subfolders:
 
-* Each subfolder = one page design
-* Each folder contains:
+- Each subfolder = one page design
+- Each contains:
+  - `index.html` (or HTML file)
+  - preview image
 
-  * `index.html` (or HTML file)
-  * preview image
+A global design system exists in:
 
-Some pages may already be implemented in the project — DO NOT include them again.
+- `@stitch_design/sentinel_heritage/DESIGN.md`
+
+A **shared component system** (Button, Header, Footer, Badge, Link, etc.) has already been created using:
+
+- `shadcn/ui`
+- `TailwindCSS`
+- `class-variance-authority` (for variants)
+
+⚠️ You MUST reuse and extend these shared components wherever possible. Do NOT rebuild them.
 
 ---
 
 ## 🎯 Your Goal
 
-Help implement ONE selected page from `stitch_design/` into the project using:
+Implement **ONE selected page** from `stitch_design/` into the project using:
 
-* Next.js (App Router)
-* Tailwind CSS
-* shadcn/ui
-* React Hook Form (if forms exist)
-* Fully typed (TypeScript)
+- Next.js (App Router)
+- Tailwind CSS
+- shadcn/ui
+- Existing shared components
+- React Hook Form (if needed)
+- Fully typed TypeScript
 
 ---
 
 ## 🧩 Step 1: Discover Pages
 
 1. Scan `stitch_design/`
-2. List all available page folders
-3. Exclude:
-
-   * Pages already implemented in `/app`
-4. Show remaining pages as selectable options
+2. List all page folders
+3. Exclude pages already implemented in `/app`
+4. Output remaining pages as selectable options
 
 ---
 
@@ -39,25 +47,45 @@ Help implement ONE selected page from `stitch_design/` into the project using:
 
 Ask:
 
-> "Which page would you like to implement?"
+> “Which page would you like to implement?”
 
-Wait for user input before proceeding.
+Wait for user input.
 
 ---
 
 ## 📐 Step 3: Analyze Design
 
-After user selects a page:
+After selection:
 
 1. Parse HTML structure
 2. Identify:
+   - Layout sections
+   - UI components
+   - Reusable patterns
 
-   * Layout sections
-   * Components (header, cards, forms, etc.)
-   * Reusable UI patterns
-3. Check `DESIGN.md` from `sentinel_heritage`
+3. Cross-check with `DESIGN.md`:
+   - spacing
+   - typography
+   - colors
+   - component usage
 
-   * Follow spacing, typography, color, and component rules strictly
+---
+
+## 🔁 Step 3.5: Map to Existing Components (CRITICAL)
+
+Before creating anything new:
+
+1. Map UI elements to existing shared components:
+   - Buttons → `Button`
+   - Links → `Link`
+   - Status → `Badge`
+   - Layout → `Header`, `Footer`
+
+2. If a component is close but not exact:
+   - Extend via variants (CVA)
+
+3. Only create new components if:
+   - No existing component fits the need
 
 ---
 
@@ -65,13 +93,16 @@ After user selects a page:
 
 ### Folder Structure (STRICT)
 
-* `/app/...` → ONLY routing + page-level composition
-* `/src/components/...` → ALL UI components
+```
+/app/...                → routing + page composition ONLY
+/src/components/...    → ALL UI components
+```
 
 Example:
 
 ```
 /app/dashboard/page.tsx
+
 /src/components/dashboard/
   ├── dashboard-page.tsx
   ├── stats-card.tsx
@@ -80,78 +111,86 @@ Example:
 
 ---
 
-### Component Rules
+## 🧱 Component Rules
 
-* Small, reusable components
-* No large files
-* Separate concerns properly
-* Avoid duplication
-
----
-
-### Server vs Client
-
-* Default = Server Components
-* Use `"use client"` ONLY when necessary:
-
-  * forms
-  * state
-  * interactivity
+- Prefer **small, reusable components**
+- Avoid duplication
+- Use **composition**
+- Keep files focused
 
 ---
 
-### Forms
+## ⚙️ Server vs Client
 
-If forms exist:
+- Default = Server Components
+- Use `"use client"` ONLY when necessary:
+  - forms
+  - local state
+  - interactivity
 
-* Use `react-hook-form`
-* Use `shadcn/ui` form components
-* Fully typed with Zod (if needed)
+⚠️ If needed:
+
+- Isolate client logic into small subcomponents
+- Do NOT convert entire page to client
+
+---
+
+## 📝 Forms
+
+If present:
+
+- Use `react-hook-form`
+- Use `shadcn/ui` form components
+- Use Zod for validation
+- Fully typed
 
 ---
 
 ## 🧼 Code Quality Rules
 
-### Must Have:
+### Required:
 
-* Full TypeScript types
-* Clean props interfaces
-* No `any`
-* Avoid using client component and only use if neccessary and if possible make seperate component that uses client to avoid making entire component client !important
-* Proper naming conventions
+- Strict TypeScript (no `any`)
+- Clear props interfaces
+- Proper naming
+- Reusable logic
 
----
+### Avoid:
 
-### Documentation (IMPORTANT)
-
-Each file should include:
-
-* Short description (WHAT + WHY)
-* Props explanation (if needed)
-
-Avoid:
-
-* Long unnecessary comments
-* Over-explaining obvious code
+- Large monolithic files
+- Mixing concerns
+- Duplicating UI logic
 
 ---
 
-### Performance
+## 📚 Documentation Rules
 
-* Use `React.memo` where useful
-* Extract constants
-* Avoid re-renders
-* Prefer server rendering
+Each file must include:
+
+- Short description (WHAT + WHY)
+- Props explanation (if applicable)
+
+Avoid over-commenting.
 
 ---
 
-## 🧱 Step 5: Implementation Plan
+## ⚡ Performance
 
-Before writing code:
+- Prefer Server Components
+- Use `React.memo` when useful
+- Extract constants
+- Minimize re-renders
 
-1. Show component breakdown
-2. Show file structure
-3. Ask for confirmation
+---
+
+## 🧱 Step 5: Implementation Plan (MANDATORY)
+
+Before coding:
+
+1. Component breakdown
+2. File structure
+3. List reused shared components
+4. Ask for confirmation
 
 ---
 
@@ -159,39 +198,30 @@ Before writing code:
 
 Generate:
 
-* Page route (`/app/...`)
-* Components in `/src/components/...`
-* Clean, modular files
+- `/app/.../page.tsx` (composition only)
+- `/src/components/...` (modular components)
 
 Follow:
 
-* Tailwind best practices
-* shadcn patterns
-* Consistent spacing/layout
+- Tailwind best practices
+- shadcn patterns
+- DESIGN.md strictly
 
 ---
 
 ## 🚫 Strict Rules
 
-* DO NOT put UI code inside `/app` except page composition
-* DO NOT create large monolithic components
-* DO NOT ignore DESIGN.md
-* DO NOT repeat code
+- ❌ No UI logic inside `/app`
+- ❌ No rebuilding shared components
+- ❌ No ignoring DESIGN.md
+- ❌ No duplication
+- ❌ No large components
 
 ---
 
 ## ✅ Output Format
 
-1. Page options (initial step)
+1. Page options
 2. Wait for selection
 3. Architecture plan
-4. Code (modular, file-by-file)
-
----
-
-## 🧠 Behavior Guidelines
-
-* Be precise
-* Ask before proceeding when needed
-* Prefer clarity over cleverness
-* Keep output clean and structured
+4. Code (file-by-file)

@@ -1,10 +1,10 @@
-import React from "react";
+import React from "react"
 
 /**
  * Props for ContextProviders component
  */
 interface IContextProviderProps {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 /**
@@ -19,7 +19,7 @@ interface IContextProviderProps {
  * </ContextProviders>
  */
 const ContextProviders: React.FC<IContextProviderProps> = ({ children }) => {
-  return <>{children}</>;
-};
+  return <>{children}</>
+}
 
-export default ContextProviders;
+export default ContextProviders

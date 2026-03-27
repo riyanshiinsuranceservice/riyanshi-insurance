@@ -1,12 +1,13 @@
-import { I18nProvider } from 'next-i18next/client'
+import { I18nProvider } from "next-i18next/client"
 
 /**
  * Props for AppI18nProvider
  */
 interface I18nProviderProps {
-  language: string;
-  resources: any;
-  children: React.ReactNode;
+  language: string
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  resources: any
+  children: React.ReactNode
 }
 
 /**
@@ -35,7 +36,7 @@ const AppI18nProvider: React.FC<I18nProviderProps> = ({
     <I18nProvider language={language} resources={resources}>
       {children}
     </I18nProvider>
-  );
-};
+  )
+}
 
-export default AppI18nProvider;
+export default AppI18nProvider
