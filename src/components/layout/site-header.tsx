@@ -6,7 +6,6 @@ import Link from "next/link"
 import { useParams, usePathname } from "next/navigation"
 import { useT } from "next-i18next/client"
 
-import LanguageToggle from "@/components/language-toggle"
 import { Button } from "@/components/ui/button"
 import { AppLink, appLinkVariants } from "@/components/ui/app-link"
 import { ScrollArea } from "@/components/ui/scroll-area"
@@ -36,13 +35,14 @@ const HEADER_NAV_ACTIVE_CLASSNAME =
 
 type SiteHeaderProps = {
   className?: string
+  languageToggle: React.ReactNode
 }
 
 type NavItem = { key: string; label: string; href: string }
 
 /**
  * What: primary nav + language switch + call CTA for all pages under `[lng]`.
- * Why: copy comes from `common` via `useT`; only layout shell and contact target are fixed here.
+ * Why: copy comes from `common` via `useT`; `languageToggle` is server-rendered and passed from layout.
  * Mobile nav uses shadcn `Sidebar` (sheet) + `ScrollArea` so long link lists stay usable.
  */
 function MobileMenuTrigger({ openMobile }: { openMobile: boolean }) {
@@ -111,11 +111,13 @@ function SiteHeaderShell({
   navItems,
   lng,
   t,
+  languageToggle,
 }: {
   className?: string
   navItems: NavItem[]
   lng: string
   t: (key: string) => string
+  languageToggle: React.ReactNode
 }) {
   const pathname = usePathname()
   const { openMobile } = useSidebar()
@@ -159,7 +161,7 @@ function SiteHeaderShell({
         <SidebarHeader className="gap-3 border-b border-sidebar-border p-4">
           <div className="flex items-center justify-between max-sm:flex-col gap-2">
             <SiteLogo label={t("brand")} size="sm" className="text-sidebar-foreground" />
-            <LanguageToggle />
+            {languageToggle}
           </div>
         </SidebarHeader>
         <SidebarContent className="min-h-0 flex-1 overflow-hidden px-2 py-3">
@@ -221,7 +223,7 @@ function SiteHeaderShell({
             </nav>
 
             <div className="hidden items-center gap-3 md:flex">
-              <LanguageToggle />
+              {languageToggle}
               <Button asChild variant="primary" size="sm">
                 <a href={SITE_CONSULT_TEL}>{t("header.cta")}</a>
               </Button>
@@ -235,7 +237,7 @@ function SiteHeaderShell({
   )
 }
 
-function SiteHeader({ className }: SiteHeaderProps) {
+function SiteHeader({ className, languageToggle }: SiteHeaderProps) {
   const { t } = useT("common")
   const params = useParams()
   const lng = typeof params?.lng === "string" ? params.lng : "gu"
@@ -249,7 +251,13 @@ function SiteHeader({ className }: SiteHeaderProps) {
 
   return (
     <SidebarProvider defaultOpen={false} className="flex min-h-0 w-full min-w-0 flex-col">
-      <SiteHeaderShell className={className} navItems={navItems} lng={lng} t={t} />
+      <SiteHeaderShell
+        className={className}
+        navItems={navItems}
+        lng={lng}
+        t={t}
+        languageToggle={languageToggle}
+      />
     </SidebarProvider>
   )
 }

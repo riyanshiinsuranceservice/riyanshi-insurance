@@ -1,24 +1,22 @@
-"use client"
-
-import { useParams } from "next/navigation"
-import { useT } from "next-i18next/client"
+import { getT } from "next-i18next/server"
 
 import { AppLink } from "@/components/ui/app-link"
 import { cn } from "@/lib/utils"
 import { ROUTE } from "@/routes"
 
 type LanguageToggleProps = {
+  lng: string
   className?: string
 }
 
 /**
  * What: EN / GU links with labels from `common`.
- * Why: used in the site header everywhere; reads locale from the `[lng]` segment.
+ * Why: server component — locale comes from layout `[lng]`; no client hooks.
+ * What for: passed into `SiteHeader` as a slot from the localized layout.
  */
-export default function LanguageToggle({ className }: LanguageToggleProps) {
-  const { t } = useT("common")
-  const params = useParams()
-  const currentLng = typeof params?.lng === "string" ? params.lng : "gu"
+export default async function LanguageToggle({ lng, className }: LanguageToggleProps) {
+  const { t } = await getT("common", { lng })
+  const currentLng = lng === "en" || lng === "gu" ? lng : "gu"
 
   return (
     <div className={cn("flex items-center gap-2 text-sm", className)}>

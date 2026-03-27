@@ -8,6 +8,7 @@ import {
 import i18nConfig from "../../../i18n.config"
 import AppI18nProvider from "@/components/providers/i18n-provider"
 import ContextProviders from "@/components/providers"
+import LanguageToggle from "@/components/language-toggle"
 import { SiteFloatingWhatsApp } from "@/components/layout/site-floating-whatsapp"
 import { SiteFooter } from "@/components/layout/site-footer"
 import { SiteHeader } from "@/components/layout/site-header"
@@ -36,10 +37,10 @@ export default async function RootLayout({
     <AppI18nProvider language={lng} resources={resources}>
       <ContextProviders>
         <div className="min-h-screen bg-slate-50 text-slate-900">
-          <SiteHeader />
+          <SiteHeader languageToggle={<LanguageToggle lng={lng} />} />
           {children}
           <SiteFooter lng={lng} />
-          <SiteFloatingWhatsApp />
+          <SiteFloatingWhatsApp lng={lng} />
         </div>
       </ContextProviders>
     </AppI18nProvider>
