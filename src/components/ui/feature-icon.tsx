@@ -4,7 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const featureIconVariants = cva(
-  "flex shrink-0 items-center justify-center rounded-[var(--radius-default)] [&_svg]:pointer-events-none [&_svg]:shrink-0",
+  "flex shrink-0 items-center justify-center rounded-lg [&_svg]:pointer-events-none [&_svg]:shrink-0",
   {
     variants: {
       size: {
@@ -14,15 +14,15 @@ const featureIconVariants = cva(
       },
       tone: {
         primary:
-          "bg-[var(--color-primary-fixed)] text-[var(--color-primary)] dark:bg-[var(--color-primary-container)] dark:text-[var(--color-primary-fixed)]",
+          "bg-primary-fixed text-primary dark:bg-primary-container dark:text-primary-fixed",
         secondary:
-          "bg-[var(--color-secondary-fixed)] text-[var(--color-secondary)] dark:text-[var(--color-on-secondary-fixed-variant)]",
+          "bg-secondary-fixed text-brand-secondary dark:text-on-secondary-fixed-variant",
         muted:
-          "bg-[var(--color-primary-fixed-dim)] text-[var(--color-primary-container)] dark:bg-white/15 dark:text-[var(--color-primary-fixed)]",
+          "bg-primary-fixed-dim text-primary-container dark:bg-white/15 dark:text-primary-fixed",
         tertiary:
-          "bg-[var(--color-tertiary-fixed)] text-[var(--color-tertiary)] dark:bg-[var(--color-on-tertiary-fixed-variant)] dark:text-[var(--color-tertiary-fixed)]",
+          "bg-tertiary-fixed text-tertiary dark:bg-on-tertiary-fixed-variant dark:text-tertiary-fixed",
         neutral:
-          "bg-[var(--color-surface-container-highest)] text-[var(--color-on-surface)] dark:bg-white/10 dark:text-foreground",
+          "bg-surface-container-highest text-on-surface dark:bg-white/10 dark:text-foreground",
         inverse: "bg-white/20 text-white",
       },
       shape: {

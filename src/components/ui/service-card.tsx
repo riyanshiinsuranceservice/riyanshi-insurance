@@ -4,16 +4,15 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const serviceCardVariants = cva(
-  "group flex flex-col rounded-[var(--radius-default)] bg-[var(--color-surface-container-lowest)] p-8 shadow-sm transition-all duration-300 hover:shadow-md dark:bg-white/5",
+  "group flex flex-col rounded-lg bg-surface-container-lowest p-8 shadow-sm transition-all duration-300 hover:shadow-md dark:bg-white/5",
   {
     variants: {
       accent: {
-        primary: "border-l-4 border-[var(--color-primary)]",
-        secondary: "border-l-4 border-[var(--color-secondary)]",
-        container: "border-l-4 border-[var(--color-primary-container)]",
-        tertiary: "border-l-4 border-[var(--color-tertiary-fixed-dim)]",
-        muted:
-          "border-l-4 border-[color:color-mix(in_srgb,var(--color-outline-variant)_50%,transparent)]",
+        primary: "border-l-4 border-primary",
+        secondary: "border-l-4 border-brand-secondary",
+        container: "border-l-4 border-primary-container",
+        tertiary: "border-l-4 border-tertiary-fixed-dim",
+        muted: "border-l-4 border-outline-variant/50",
       },
     },
     defaultVariants: {
@@ -57,7 +56,7 @@ function ServiceCardTitle({ className, ...props }: React.ComponentProps<"h2">) {
     <h2
       data-slot="service-card-title"
       className={cn(
-        "mb-3 font-[var(--font-display)] text-2xl font-bold text-[var(--color-primary)] dark:text-[var(--color-primary-fixed)]",
+        "font-display mb-3 text-2xl font-bold text-primary dark:text-primary-fixed",
         className
       )}
       {...props}
@@ -70,7 +69,7 @@ function ServiceCardTagline({ className, ...props }: React.ComponentProps<"p">) 
     <p
       data-slot="service-card-tagline"
       className={cn(
-        "mb-4 text-xl font-bold leading-snug text-[var(--color-on-surface)]",
+        "mb-4 text-xl leading-snug font-bold text-on-surface",
         className
       )}
       {...props}
@@ -83,7 +82,7 @@ function ServiceCardDescription({ className, ...props }: React.ComponentProps<"p
     <p
       data-slot="service-card-description"
       className={cn(
-        "mb-8 line-clamp-3 text-[color:color-mix(in_srgb,var(--color-on-surface)_78%,white)] leading-relaxed dark:text-neutral-300",
+        "mb-8 line-clamp-3 text-on-surface/80 leading-relaxed dark:text-neutral-300",
         className
       )}
       {...props}

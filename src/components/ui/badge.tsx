@@ -10,17 +10,17 @@ const badgeVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-[linear-gradient(135deg,var(--color-primary),var(--color-primary-container))] text-white",
+          "bg-gradient-to-br from-primary to-primary-container text-white",
         trust:
-          "bg-[var(--color-secondary-fixed)] text-[var(--color-on-secondary-fixed-variant)]",
+          "bg-secondary-fixed text-on-secondary-fixed-variant",
         status:
-          "bg-[var(--color-surface-container-highest)] text-[var(--color-secondary)] dark:bg-white/10 dark:text-[var(--color-secondary-fixed)]",
+          "bg-surface-container-highest text-brand-secondary dark:bg-white/10 dark:text-secondary-fixed",
         category:
-          "bg-[var(--color-primary-fixed)] text-[var(--color-primary-container)] dark:bg-[var(--color-primary-container)] dark:text-[var(--color-primary-fixed)]",
+          "bg-primary-fixed text-primary-container dark:bg-primary-container dark:text-primary-fixed",
         secondary: "bg-secondary text-secondary-foreground [a]:hover:bg-secondary/80",
         destructive: "bg-destructive/10 text-destructive dark:bg-destructive/20",
         outline:
-          "border-[color:color-mix(in_srgb,var(--color-outline-variant)_35%,transparent)] text-[var(--color-on-surface)] dark:text-foreground",
+          "border-outline-variant/35 text-on-surface dark:text-foreground",
       },
       size: {
         sm: "h-5 px-2 py-0.5 text-[0.7rem]",

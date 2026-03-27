@@ -1,70 +1,53 @@
 @import "tailwindcss";
 
 @utility display-lg {
-  font-family: var(--font-display);
-  font-size: 3.5rem;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
+  @apply font-display text-[3.5rem] leading-[1.1] tracking-tight;
 }
 
 @utility headline-md {
-  font-family: var(--font-display);
-  font-size: 1.75rem;
-  line-height: 1.4;
+  @apply font-display text-[1.75rem] leading-snug;
 }
 
 @utility headline-md-gujarati {
-  font-family: var(--font-gujarati);
-  font-size: 1.9rem; /* +10% */
-  line-height: 1.6;
+  @apply font-gujarati text-[1.9rem] leading-relaxed;
 }
 
 @utility body-lg {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  line-height: 1.6;
-  max-width: 72ch;
+  @apply max-w-[72ch] font-sans text-base leading-relaxed;
 }
 
 @utility label-md {
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  @apply font-sans text-xs tracking-[0.05em] uppercase;
 }
 
 /* =========================================
    4. SURFACE & LAYERING UTILITIES
 ========================================= */
 @utility surface-base {
-  background-color: var(--color-surface);
+  @apply bg-surface;
 }
 
 @utility surface-low {
-  background-color: var(--color-surface-container-low);
+  @apply bg-surface-container-low;
 }
 
 @utility surface {
-  background-color: var(--color-surface-container);
+  @apply bg-surface-container;
 }
 
 @utility surface-card {
-  background-color: var(--color-surface-container-lowest);
+  @apply bg-surface-container-lowest;
 }
 
 @utility surface-highest {
-  background-color: var(--color-surface-container-highest);
+  @apply bg-surface-container-highest;
 }
 
 /* =========================================
    5. GRADIENTS & GLASSMORPHISM
 ========================================= */
 @utility gradient-trust {
-  background-image: linear-gradient(
-    135deg,
-    var(--color-primary),
-    var(--color-primary-container)
-  );
+  @apply bg-gradient-to-br from-primary to-primary-container;
 }
 
 @utility glass {
@@ -76,11 +59,11 @@
    6. ELEVATION SYSTEM
 ========================================= */
 @utility elevation-ambient {
-  box-shadow: var(--shadow-ambient);
+  @apply shadow-ambient;
 }
 
 @utility ghost-border {
-  outline: 1px solid color-mix(in srgb, var(--color-outline-variant) 15%, transparent);
+  @apply outline outline-1 outline-outline-variant/15;
 }
 
 /* =========================================
@@ -89,90 +72,62 @@
 
 /* Buttons */
 @utility btn-primary {
-  @apply text-white;
-  border-radius: var(--radius-default);
-  background-image: linear-gradient(
-    135deg,
-    var(--color-primary),
-    var(--color-primary-container)
-  );
-  padding: 0.75rem 1.5rem;
-  font-weight: 500;
+  @apply rounded-lg bg-gradient-to-br from-primary to-primary-container px-6 py-3 font-medium text-white;
 }
 
 @utility btn-primary-hover {
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-primary-fixed) 40%, transparent);
+  box-shadow: 0 0 0 4px rgb(214 228 255 / 0.4);
 }
 
 @utility btn-secondary {
-  color: var(--color-secondary);
-  background: var(--color-surface-container-highest);
-  border-radius: var(--radius-default);
-  padding: 0.75rem 1.5rem;
+  @apply rounded-lg bg-surface-container-highest px-6 py-3 text-brand-secondary;
 }
 
 /* Cards */
 @utility card {
-  background: var(--color-surface-container-lowest);
-  border-radius: var(--radius-default);
-  padding: 1.5rem;
+  @apply rounded-lg bg-surface-container-lowest p-6;
 }
 
 /* Trust Badge */
 @utility trust-badge {
-  background: var(--color-secondary-fixed);
-  color: var(--color-on-secondary-fixed-variant);
-  border-radius: var(--radius-full);
-  padding: 0.25rem 0.75rem;
-  font-size: 0.75rem;
-  font-weight: 500;
+  @apply rounded-full bg-secondary-fixed px-3 py-1 text-xs font-medium text-on-secondary-fixed-variant;
 }
 
 /* Input Fields */
 @utility input-base {
-  background: var(--color-surface-container-lowest);
-  border-radius: var(--radius-default);
-  padding: 0.75rem;
-  outline: 1px solid transparent;
+  @apply rounded-lg bg-surface-container-lowest p-3 outline outline-1 outline-transparent;
 }
 
 @utility input-focus {
-  outline: 2px solid var(--color-primary-fixed-dim);
+  @apply outline-2 outline-primary-fixed-dim;
 }
 
 /* =========================================
    8. LAYOUT UTILITIES (EDITORIAL STYLE)
 ========================================= */
 @utility section-spacing {
-  padding-top: var(--spacing-24);
-  padding-bottom: var(--spacing-24);
+  @apply py-24;
 }
 
 @utility content-spacing {
-  gap: var(--spacing-16);
+  @apply gap-16;
 }
 
 @utility list-spacing {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-4);
+  @apply flex flex-col gap-4;
 }
 
 /* =========================================
    9. ACCESSIBILITY ENFORCEMENTS
 ========================================= */
 @utility text-safe {
-  color: var(--color-on-surface);
-}
-
-@utility text-secondary {
-  color: var(--color-secondary);
+  @apply text-on-surface;
 }
 
 /* Prevent harsh black usage */
 @layer utilities {
   .text-black {
-    color: var(--color-on-surface) !important;
+    color: theme(colors.on-surface) !important;
   }
 }
 
@@ -186,7 +141,8 @@
   --color-primary-fixed: #d6e4ff;
   --color-primary-fixed-dim: #adc7f7;
 
-  --color-secondary: #2c694e;
+  /* Brand accent green (not shadcn `--color-secondary`, which stays UI-muted). */
+  --color-brand-secondary: #2c694e;
   --color-secondary-fixed: #b1f0ce;
   --color-on-secondary-fixed-variant: #0e5138;
 
@@ -202,9 +158,11 @@
   --color-surface-container-low: #f2f4f6;
   --color-surface-container: #eceef0;
   --color-surface-container-highest: #e6e8eb;
+  --color-surface-container-high: #e6e8ea;
 
   /* Text */
   --color-on-surface: #191c1e;
+  --color-on-surface-variant: #43474e;
 
   /* Outline */
   --color-outline-variant: #c4c6cf;
@@ -241,10 +199,7 @@
 */
 @layer base {
   html {
-    font-family: var(--font-body);
-    background: var(--color-surface);
-    color: var(--color-on-surface);
-    @apply font-sans;
+    @apply bg-surface font-sans text-on-surface;
   }
 
   body {
@@ -255,8 +210,7 @@
   h2,
   h3,
   h4 {
-    font-family: var(--font-display);
-    color: var(--color-on-surface);
+    @apply font-display text-on-surface;
   }
 
   * {
@@ -291,7 +245,6 @@
   --color-secondary-foreground: var(--secondary-foreground);
   --color-secondary: var(--secondary);
   --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);

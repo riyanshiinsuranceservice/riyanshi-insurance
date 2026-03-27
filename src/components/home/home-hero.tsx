@@ -38,7 +38,7 @@ function HomeHero({
   cardSub,
 }: HomeHeroProps) {
   return (
-    <section className="relative flex min-h-[min(52rem,90svh)] items-center overflow-hidden bg-[var(--color-surface)]">
+    <section className="relative flex min-h-[min(52rem,90svh)] items-center overflow-hidden bg-surface">
       <div className="mx-auto grid w-full max-w-7xl items-center gap-12 px-6 py-12 md:grid-cols-2 md:py-16">
         <div className="z-10 order-2 md:order-1">
           <Badge
@@ -49,10 +49,10 @@ function HomeHero({
             <ShieldCheck className="size-3.5 shrink-0" aria-hidden />
             {badge}
           </Badge>
-          <h1 className="font-[var(--font-display)] text-4xl font-extrabold tracking-tight text-[var(--color-primary)] md:text-6xl lg:text-7xl">
+          <h1 className="font-display text-4xl font-extrabold tracking-tight text-primary md:text-6xl lg:text-7xl">
             {title}
           </h1>
-          <p className="body-lg mt-6 max-w-xl text-[color:color-mix(in_srgb,var(--color-on-surface-variant)_100%,transparent)]">
+          <p className="body-lg mt-6 max-w-xl text-on-surface-variant">
             {subtitle}
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
@@ -70,7 +70,7 @@ function HomeHero({
 
         <div className="relative order-1 md:order-2">
           <div
-            className="absolute -top-12 -right-12 size-64 rounded-full bg-[var(--color-primary-fixed)] opacity-30 blur-3xl"
+            className="absolute -top-12 -right-12 size-64 rounded-full bg-primary-fixed opacity-30 blur-3xl"
             aria-hidden
           />
           <div className="relative max-md:w-4/5 max-md:mx-auto aspect-square rotate-2 overflow-hidden rounded-2xl shadow-2xl transition-transform duration-500 hover:rotate-0">

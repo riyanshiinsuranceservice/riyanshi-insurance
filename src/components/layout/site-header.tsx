@@ -32,7 +32,7 @@ const HEADER_PIN_SCROLL_PX = 48
 
 /** Stitch-style active primary nav: brand color + weighted underline. */
 const HEADER_NAV_ACTIVE_CLASSNAME =
-  "font-medium text-[var(--color-primary)] underline decoration-2 underline-offset-[0.35rem] decoration-[var(--color-primary)] hover:text-[var(--color-primary)] dark:text-[var(--color-primary-fixed)] dark:decoration-[var(--color-primary-fixed)] dark:hover:text-[var(--color-primary-fixed)]"
+  "font-medium text-primary underline decoration-2 decoration-primary underline-offset-[0.35rem] hover:text-primary dark:text-primary-fixed dark:decoration-primary-fixed dark:hover:text-primary-fixed"
 
 type SiteHeaderProps = {
   className?: string
@@ -186,7 +186,7 @@ function SiteHeaderShell({
         {isPinned ? <div className="h-16 w-full shrink-0" aria-hidden="true" /> : null}
         <header
           className={cn(
-            "z-50 w-full border-b border-[color:color-mix(in_srgb,var(--color-outline-variant)_20%,transparent)] bg-white/80 backdrop-blur-xl transition-[box-shadow] duration-200 dark:bg-neutral-950/70",
+            "z-50 w-full border-b border-outline-variant/20 bg-white/80 backdrop-blur-xl transition-shadow duration-200 dark:bg-neutral-950/70",
             isPinned
               ? "fixed top-0 right-0 left-0 shadow-[0_8px_24px_rgba(25,28,30,0.06)]"
               : "relative",

@@ -29,8 +29,8 @@ export default function LanguageToggle({ className }: LanguageToggleProps) {
         className={cn(
           "rounded-full px-3 py-1.5 no-underline transition-colors",
           currentLng === "en"
-            ? "bg-[var(--color-surface-container-highest)] font-semibold text-[var(--color-primary)]"
-            : "text-[var(--color-on-surface-variant)] hover:text-[var(--color-primary)]"
+            ? "bg-surface-container-highest font-semibold text-primary"
+            : "text-on-surface-variant hover:text-primary"
         )}
       >
         {t("language.english")}
@@ -42,8 +42,8 @@ export default function LanguageToggle({ className }: LanguageToggleProps) {
         className={cn(
           "rounded-full px-3 py-1.5 no-underline transition-colors",
           currentLng === "gu"
-            ? "bg-[var(--color-surface-container-highest)] font-semibold text-[var(--color-primary)]"
-            : "text-[var(--color-on-surface-variant)] hover:text-[var(--color-primary)]"
+            ? "bg-surface-container-highest font-semibold text-primary"
+            : "text-on-surface-variant hover:text-primary"
         )}
       >
         {t("language.gujarati")}

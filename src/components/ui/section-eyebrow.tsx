@@ -4,7 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const sectionEyebrowVariants = cva(
-  "label-md mb-3 block font-semibold tracking-[0.05em] text-[var(--color-secondary)] dark:text-[var(--color-secondary-fixed)]",
+  "label-md mb-3 block font-semibold tracking-[0.05em] text-brand-secondary dark:text-secondary-fixed",
   {
     variants: {
       align: {

@@ -4,7 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const highlightTileVariants = cva(
-  "flex items-center gap-3 rounded-[var(--radius-default)] bg-[var(--color-surface-container-lowest)] shadow-[var(--shadow-ambient)] dark:bg-white/5",
+  "flex items-center gap-3 rounded-lg bg-surface-container-lowest shadow-ambient dark:bg-white/5",
   {
     variants: {
       padding: {
@@ -43,12 +43,12 @@ function HighlightTile({
       {...props}
     >
       <span
-        className="flex text-[var(--color-secondary)] dark:text-[var(--color-secondary-fixed)] [&_svg]:size-6"
+        className="flex text-brand-secondary dark:text-secondary-fixed [&_svg]:size-6"
         aria-hidden
       >
         {icon}
       </span>
-      <span className="font-bold text-[var(--color-primary)] dark:text-[var(--color-primary-fixed)]">
+      <span className="font-bold text-primary dark:text-primary-fixed">
         {children}
       </span>
     </div>

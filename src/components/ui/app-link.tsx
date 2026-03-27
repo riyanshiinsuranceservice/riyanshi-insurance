@@ -10,11 +10,11 @@ const appLinkVariants = cva(
     variants: {
       variant: {
         inline:
-          "text-[var(--color-primary)] underline decoration-[1.5px] underline-offset-2 hover:text-[var(--color-primary-container)] dark:text-[var(--color-primary-fixed)]",
+          "text-primary underline decoration-[1.5px] underline-offset-2 hover:text-primary-container dark:text-primary-fixed",
         navigation:
-          "text-[var(--color-on-surface)] underline-offset-[0.35rem] decoration-[var(--color-primary)] no-underline hover:text-[var(--color-primary)] hover:underline hover:decoration-2 dark:text-foreground dark:decoration-[var(--color-primary-fixed)] dark:hover:text-[var(--color-primary-fixed)]",
+          "text-on-surface underline-offset-[0.35rem] decoration-primary no-underline hover:text-primary hover:underline hover:decoration-2 dark:text-foreground dark:decoration-primary-fixed dark:hover:text-primary-fixed",
         external:
-          "text-[var(--color-primary)] underline decoration-[1.5px] underline-offset-2 hover:text-[var(--color-secondary)] dark:text-[var(--color-primary-fixed)] dark:hover:text-[var(--color-secondary-fixed)]",
+          "text-primary underline decoration-[1.5px] underline-offset-2 hover:text-brand-secondary dark:text-primary-fixed dark:hover:text-secondary-fixed",
       },
       size: {
         sm: "text-sm",

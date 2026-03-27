@@ -6,24 +6,24 @@ import { Slot } from "radix-ui"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "group/button inline-flex shrink-0 items-center justify-center rounded-[var(--radius-default)] border border-transparent text-sm font-semibold whitespace-nowrap transition-all outline-none select-none focus-visible:ring-2 focus-visible:ring-ring/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+  "group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent text-sm font-semibold whitespace-nowrap transition-all outline-none select-none focus-visible:ring-2 focus-visible:ring-ring/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
   {
     variants: {
       variant: {
         default:
-          "bg-[linear-gradient(135deg,var(--color-primary),var(--color-primary-container))] text-white shadow-[0_8px_24px_rgba(0,32,69,0.18)] hover:brightness-110",
+          "bg-gradient-to-br from-primary to-primary-container text-white shadow-[0_8px_24px_rgba(0,32,69,0.18)] hover:brightness-110",
         primary:
-          "bg-[linear-gradient(135deg,var(--color-primary),var(--color-primary-container))] text-white shadow-[0_8px_24px_rgba(0,32,69,0.18)] hover:brightness-110",
+          "bg-gradient-to-br from-primary to-primary-container text-white shadow-[0_8px_24px_rgba(0,32,69,0.18)] hover:brightness-110",
         secondary:
-          "bg-slate-200 text-slate-900 hover:bg-slate-300 dark:bg-white/10 dark:text-[var(--color-secondary-fixed)] dark:hover:bg-white/15",
+          "bg-slate-200 text-slate-900 hover:bg-slate-300 dark:bg-white/10 dark:text-secondary-fixed dark:hover:bg-white/15",
         ghost:
-          "bg-transparent text-[var(--color-primary)] hover:bg-[var(--color-surface-container-low)] dark:text-[var(--color-primary-fixed)] dark:hover:bg-white/10",
+          "bg-transparent text-primary hover:bg-surface-container-low dark:text-primary-fixed dark:hover:bg-white/10",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90 dark:bg-destructive dark:text-white",
         outline:
-          "border border-[color:color-mix(in_srgb,var(--color-outline-variant)_35%,transparent)] bg-transparent text-[var(--color-on-surface)] hover:bg-[var(--color-surface-container-low)] dark:text-foreground dark:hover:bg-white/10",
+          "border border-outline-variant/35 bg-transparent text-on-surface hover:bg-surface-container-low dark:text-foreground dark:hover:bg-white/10",
         mintSolid:
-          "border-0 bg-[var(--color-secondary-fixed)] text-slate-950 shadow-[0_4px_18px_rgba(0,32,69,0.22)] hover:bg-[var(--color-secondary-fixed)] hover:brightness-[0.97] hover:shadow-[0_6px_22px_rgba(0,32,69,0.28)]",
+          "border-0 bg-secondary-fixed text-slate-950 shadow-[0_4px_18px_rgba(0,32,69,0.22)] hover:bg-secondary-fixed hover:brightness-[0.97] hover:shadow-[0_6px_22px_rgba(0,32,69,0.28)]",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {

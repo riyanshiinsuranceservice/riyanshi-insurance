@@ -28,7 +28,7 @@ function FloatingWhatsAppButton({
       rel="noopener noreferrer"
       aria-label={ariaLabel}
       className={cn(
-        "fixed bottom-8 right-8 z-[60] flex size-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[var(--shadow-ambient)] transition-transform hover:scale-110 active:scale-95",
+        "fixed right-8 bottom-8 z-[60] flex size-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-ambient transition-transform hover:scale-110 active:scale-95",
         className
       )}
       {...props}

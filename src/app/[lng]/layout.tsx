@@ -35,7 +35,7 @@ export default async function RootLayout({
   return (
     <AppI18nProvider language={lng} resources={resources}>
       <ContextProviders>
-        <div className="min-h-screen bg-[var(--color-surface)] text-[var(--color-on-surface)]">
+        <div className="min-h-screen bg-slate-50 text-slate-900">
           <SiteHeader />
           {children}
           <SiteFooter lng={lng} />

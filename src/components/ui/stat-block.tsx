@@ -4,13 +4,12 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const statItemValueVariants = cva(
-  "mb-2 font-[var(--font-display)] text-4xl font-extrabold lg:text-5xl",
+  "mb-2 font-display text-4xl font-extrabold lg:text-5xl",
   {
     variants: {
       tone: {
-        primary: "text-[var(--color-primary)] dark:text-[var(--color-primary-fixed)]",
-        secondary:
-          "text-[var(--color-secondary)] dark:text-[var(--color-secondary-fixed)]",
+        primary: "text-primary dark:text-primary-fixed",
+        secondary: "text-brand-secondary dark:text-secondary-fixed",
       },
     },
     defaultVariants: {
@@ -37,7 +36,7 @@ function StatItem({ className, value, label, tone, ...props }: StatItemProps) {
       {...props}
     >
       <p className={cn(statItemValueVariants({ tone }))}>{value}</p>
-      <p className="label-md text-[color:color-mix(in_srgb,var(--color-on-surface)_68%,transparent)] dark:text-neutral-400">
+      <p className="label-md text-on-surface/70 dark:text-neutral-400">
         {label}
       </p>
     </div>
@@ -52,7 +51,7 @@ const statsGridVariants = cva("grid text-center", {
     },
     container: {
       false: "",
-      true: "relative overflow-hidden rounded-3xl bg-[var(--color-surface-container-high)] p-10 dark:bg-white/10",
+      true: "relative overflow-hidden rounded-3xl bg-surface-container-high p-10 dark:bg-white/10",
     },
   },
   defaultVariants: {

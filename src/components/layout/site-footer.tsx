@@ -40,7 +40,7 @@ async function SiteFooter({ lng }: SiteFooterProps) {
   ]
 
   return (
-    <footer className="mt-16 w-full bg-[var(--color-surface-container-low)] text-[var(--color-on-surface)]">
+    <footer className="mt-16 w-full bg-surface-container-low text-on-surface">
       <div className="mx-auto grid w-full max-w-7xl gap-8 px-6 py-12 md:grid-cols-4">
         <div className="md:col-span-1">
           <h2 className="mb-3">
@@ -53,7 +53,7 @@ async function SiteFooter({ lng }: SiteFooterProps) {
 
         {sections.map((section, sectionIndex) => (
           <div key={`footer-section-${sectionIndex}-${section.title}`}>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-[0.05em] text-[var(--color-secondary)]">
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-[0.05em] text-brand-secondary">
               {section.title}
             </h3>
             <ul className="space-y-2">
@@ -69,7 +69,7 @@ async function SiteFooter({ lng }: SiteFooterProps) {
         ))}
       </div>
 
-      <div className="border-t border-[color:color-mix(in_srgb,var(--color-outline-variant)_25%,transparent)] px-6 py-4 text-center text-xs text-neutral-600 dark:text-neutral-400">
+      <div className="border-outline-variant/25 border-t px-6 py-4 text-center text-xs text-neutral-600 dark:text-neutral-400">
         {t("footer.copyright")}
       </div>
     </footer>

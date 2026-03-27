@@ -4,7 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const ctaBannerVariants = cva(
-  "relative overflow-hidden text-white shadow-[var(--shadow-ambient)] gradient-trust",
+  "gradient-trust relative overflow-hidden text-white shadow-ambient",
   {
     variants: {
       size: {
@@ -48,7 +48,7 @@ function CtaBannerTitle({ className, ...props }: React.ComponentProps<"h2">) {
     <h2
       data-slot="cta-banner-title"
       className={cn(
-        "font-[var(--font-display)] text-3xl font-bold tracking-tight text-white md:text-4xl",
+        "font-display text-3xl font-bold tracking-tight text-white md:text-4xl",
         className
       )}
       {...props}
@@ -61,7 +61,7 @@ function CtaBannerDescription({ className, ...props }: React.ComponentProps<"p">
     <p
       data-slot="cta-banner-description"
       className={cn(
-        "mt-4 max-w-2xl text-lg text-[color:color-mix(in_srgb,var(--color-primary-fixed)_78%,white_22%)]",
+        "mt-4 max-w-2xl text-lg text-primary-fixed/90",
         className
       )}
       {...props}

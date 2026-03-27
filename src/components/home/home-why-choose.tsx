@@ -23,7 +23,7 @@ const CONSULT_IMAGE =
  */
 function HomeWhyChoose({ quote, eyebrow, title, points }: HomeWhyChooseProps) {
   return (
-    <section className="bg-[var(--color-surface-container-lowest)] py-16 md:py-24">
+    <section className="bg-surface-container-lowest py-16 md:py-24">
       <div className="mx-auto grid w-full max-w-7xl items-center gap-16 px-6 md:grid-cols-2">
         <div className="relative">
           <div className="overflow-hidden rounded-3xl shadow-2xl">
@@ -36,23 +36,23 @@ function HomeWhyChoose({ quote, eyebrow, title, points }: HomeWhyChooseProps) {
               sizes="(min-width: 768px) 50vw, 100vw"
             />
           </div>
-          <div className="absolute -right-8 -bottom-8 max-w-xs rounded-3xl bg-[var(--color-secondary-fixed)] p-8 shadow-xl">
-            <p className="font-[var(--font-display)] text-xl font-bold leading-tight text-[var(--color-on-secondary-fixed-variant)] italic">
+          <div className="absolute -right-8 -bottom-8 max-w-xs rounded-3xl bg-secondary-fixed p-8 shadow-xl">
+            <p className="font-display text-xl leading-tight font-bold text-on-secondary-fixed-variant italic">
               {quote}
             </p>
           </div>
         </div>
 
         <div>
-          <span className="label-md mb-3 block text-[var(--color-secondary)]">{eyebrow}</span>
-          <h2 className="font-[var(--font-display)] mb-8 text-3xl font-bold leading-tight text-[var(--color-primary)] md:text-4xl">
+          <span className="label-md mb-3 block text-brand-secondary">{eyebrow}</span>
+          <h2 className="font-display mb-8 text-3xl leading-tight font-bold text-primary md:text-4xl">
             {title}
           </h2>
           <ul className="flex flex-col gap-2">
             {points.map((point) => (
               <li
                 key={point.title}
-                className="flex gap-4 rounded-xl p-4 transition-colors hover:bg-[var(--color-surface-container-low)]"
+                className="flex gap-4 rounded-xl p-4 transition-colors hover:bg-surface-container-low"
               >
                 <span
                   className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-[#436650]"
@@ -66,8 +66,8 @@ function HomeWhyChoose({ quote, eyebrow, title, points }: HomeWhyChooseProps) {
                   />
                 </span>
                 <div>
-                  <h4 className="font-bold text-[var(--color-primary)]">{point.title}</h4>
-                  <p className="text-sm text-[var(--color-on-surface-variant)]">
+                  <h4 className="font-bold text-primary">{point.title}</h4>
+                  <p className="text-sm text-on-surface-variant">
                     {point.description}
                   </p>
                 </div>

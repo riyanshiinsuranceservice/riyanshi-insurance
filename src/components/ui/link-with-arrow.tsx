@@ -23,7 +23,7 @@ function LinkWithArrow({
       data-slot="link-with-arrow"
       variant={variant}
       className={cn(
-        "group/arrow gap-2 font-bold text-[var(--color-primary)] transition-all hover:gap-3 dark:text-[var(--color-primary-fixed)]",
+        "group/arrow gap-2 font-bold text-primary transition-all hover:gap-3 dark:text-primary-fixed",
         className
       )}
       {...props}

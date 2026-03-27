@@ -23,7 +23,7 @@ function SiteLogo({ label, size = "md", className }: SiteLogoProps) {
   return (
     <span
       className={cn(
-        "font-[var(--font-display)] tracking-tight text-inherit",
+        "font-display tracking-tight text-inherit",
         siteLogoSize[size],
         className
       )}

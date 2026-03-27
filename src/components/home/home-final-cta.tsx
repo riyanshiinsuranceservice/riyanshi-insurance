@@ -54,7 +54,7 @@ function HomeFinalCta({
             size="lg"
             className={cn(
               "min-w-[12rem] rounded-xl px-10 py-6 text-base font-bold",
-              "focus-visible:ring-white/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-primary-container)]"
+              "focus-visible:ring-white/40 focus-visible:ring-offset-2 focus-visible:ring-offset-primary-container"
             )}
           >
             <a
@@ -73,7 +73,7 @@ function HomeFinalCta({
             className={cn(
               "min-w-[12rem] rounded-xl border-2 border-white/45 bg-transparent px-10 py-6 text-base font-semibold text-white shadow-none",
               "hover:border-white/65 hover:bg-white/10 hover:text-white",
-              "focus-visible:ring-white/45 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-primary-container)]"
+              "focus-visible:ring-white/45 focus-visible:ring-offset-2 focus-visible:ring-offset-primary-container"
             )}
           >
             <a
