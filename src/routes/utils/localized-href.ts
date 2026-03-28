@@ -26,3 +26,33 @@ export function localizedServicesHref(lng: string): string {
   const localeKey = localeKeyFromLng(lng)
   return ROUTE[localeKey].services.path
 }
+
+/**
+ * What: resolved `/[lng]/about` path for the Stitch about page.
+ * Why: about is a first-class route; nav must not rely on a home hash alone.
+ * What for: header, footer, and in-page links without hardcoding locale segments.
+ */
+export function localizedAboutHref(lng: string): string {
+  const localeKey = localeKeyFromLng(lng)
+  return ROUTE[localeKey].about.path
+}
+
+/**
+ * What: resolved `/[lng]/contact` path for the Stitch contact & locations page.
+ * Why: contact is a first-class route; nav and CTAs must not rely on `#contact` alone.
+ * What for: header, footer, hero CTAs, and services “learn more” without hardcoding segments.
+ */
+export function localizedContactHref(lng: string): string {
+  const localeKey = localeKeyFromLng(lng)
+  return ROUTE[localeKey].contact.path
+}
+
+/**
+ * What: resolved `/[lng]/lead` path for the Stitch lead-generation landing page.
+ * Why: ads and campaigns need a stable URL without hardcoding locale segments.
+ * What for: CTAs, internal links, and analytics landing targets.
+ */
+export function localizedLeadHref(lng: string): string {
+  const localeKey = localeKeyFromLng(lng)
+  return ROUTE[localeKey].lead.path
+}

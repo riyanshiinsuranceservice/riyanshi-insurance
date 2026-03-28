@@ -5,7 +5,7 @@ import { HomeTrustHighlights } from "@/components/home/home-trust-highlights"
 import { HomeWhyChoose } from "@/components/home/home-why-choose"
 import { PageWrapper } from "@/components/layout/page-wrapper"
 import { SITE_CONSULT_TEL, SITE_WHATSAPP_HREF } from "@/lib/site-contact"
-import { localizedHref, localizedServicesHref } from "@/routes"
+import { localizedContactHref, localizedServicesHref } from "@/routes"
 import { getT } from "next-i18next/server"
 
 export default async function Page({ params }: { params: Promise<{ lng: string }> }) {
@@ -21,7 +21,7 @@ export default async function Page({ params }: { params: Promise<{ lng: string }
           subtitle={th("hero.subtitle")}
           ctaPrimary={th("hero.ctaPrimary")}
           ctaSecondary={th("hero.ctaSecondary")}
-          consultationHref={localizedHref(lng, "contact")}
+          consultationHref={localizedContactHref(lng)}
           contactHref={SITE_CONSULT_TEL}
           cardLabel={th("hero.cardLabel")}
           cardValue={th("hero.cardValue")}
@@ -67,7 +67,7 @@ export default async function Page({ params }: { params: Promise<{ lng: string }
             title: th("services.vehicle.title"),
             description: th("services.vehicle.description"),
             cta: th("services.vehicle.cta"),
-            quoteHref: localizedHref(lng, "contact"),
+            quoteHref: localizedContactHref(lng),
           }}
           customLine={th("services.customLine")}
           viewAllLabel={th("services.viewAll")}

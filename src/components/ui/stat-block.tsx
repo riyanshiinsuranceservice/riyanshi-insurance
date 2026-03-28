@@ -26,7 +26,7 @@ type StatItemProps = React.ComponentProps<"div"> & {
 /**
  * What: single stat cell (number + uppercase label).
  * Why: duplicated in Lead landing, About, and Home trust rows.
- * What for: marketing proof blocks inside a `StatsGrid` or custom layouts.
+ * What for: marketing proof blocks inside `StatsGrid` / `MarketingStatsSection`.
  */
 function StatItem({ className, value, label, tone, ...props }: StatItemProps) {
   return (

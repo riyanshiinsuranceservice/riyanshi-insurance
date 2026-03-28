@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "description": "Get in touch for insurance and investment guidance. Visit our Ahmedabad and Surat offices or send us a message."
+  },
+  "hero": {
+    "eyebrow": "Contact us",
+    "titleBefore": "Secure your future — ",
+    "titleEmphasis": "reach out today.",
+    "titleAfter": "",
+    "intro": "Fill in the form below or call us directly for any insurance or investment questions.",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email"
+  },
+  "form": {
+    "title": "Your details",
+    "name": "Name",
+    "namePlaceholder": "Your full name",
+    "phone": "Mobile number",
+    "phonePlaceholder": "+91 00000 00000",
+    "service": "Service interest",
+    "message": "Message (optional)",
+    "messagePlaceholder": "Tell us how we can help…",
+    "submit": "Submit details",
+    "mailSubject": "Inquiry from website",
+    "successHint": "If your email app did not open, check that a default mail client is set on your device.",
+    "services": {
+      "life": "Life insurance",
+      "health": "Health insurance",
+      "mutualFunds": "Mutual funds",
+      "fd": "Fixed deposits",
+      "other": "Other"
+    },
+    "errors": {
+      "nameRequired": "Please enter your name.",
+      "nameMin": "Name should be at least 2 characters.",
+      "phoneRequired": "Please enter your phone number.",
+      "phoneInvalid": "Enter a valid phone number.",
+      "serviceRequired": "Please choose a service.",
+      "messageMax": "Message is too long."
+    }
+  },
+  "locations": {
+    "title": "Our office locations",
+    "subtitle": "We serve clients across Ahmedabad and Surat.",
+    "ahmedabad": {
+      "title": "Ahmedabad office",
+      "addressLine1": "402, Business Hub, S.G. Highway,",
+      "addressLine2": "Thaltej, Ahmedabad - 380054.",
+      "mapCta": "View on map"
+    },
+    "surat": {
+      "title": "Surat office",
+      "addressLine1": "105, Diamond World, Varachha Road,",
+      "addressLine2": "Surat - 395006.",
+      "mapCta": "View on map"
+    },
+    "mapImageAlt": "Map preview centred on Ahmedabad",
+    "mapOverlay": "Tap to open in Maps",
+    "mapLinkAria": "Open map for Ahmedabad area in a new tab"
+  }
+}

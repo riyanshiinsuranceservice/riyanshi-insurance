@@ -1,6 +1,6 @@
 import { SiteLogo } from "@/components/layout/site-logo"
 import { AppLink } from "@/components/ui/app-link"
-import { localizedHref, localizedServicesHref } from "@/routes"
+import { localizedContactHref, localizedServicesHref } from "@/routes"
 import { getT } from "next-i18next/server"
 
 type SiteFooterProps = {
@@ -20,8 +20,8 @@ async function SiteFooter({ lng }: SiteFooterProps) {
       links: [
         { label: t("footer.privacy"), href: "#" },
         { label: t("footer.terms"), href: "#" },
-        { label: t("footer.officeAhmedabad"), href: "#" },
-        { label: t("footer.officeSurat"), href: "#" },
+        { label: t("footer.officeAhmedabad"), href: localizedContactHref(lng) },
+        { label: t("footer.officeSurat"), href: localizedContactHref(lng) },
       ],
     },
     {
@@ -35,7 +35,7 @@ async function SiteFooter({ lng }: SiteFooterProps) {
     },
     {
       title: t("footer.connect"),
-      links: [{ label: t("footer.address"), href: localizedHref(lng, "contact") }],
+      links: [{ label: t("footer.address"), href: localizedContactHref(lng) }],
     },
   ]
 

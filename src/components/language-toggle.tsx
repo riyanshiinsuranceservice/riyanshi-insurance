@@ -1,27 +1,50 @@
-import { getT } from "next-i18next/server"
+"use client"
+
+/**
+ * What: EN / GU links that keep the current route (and hash) when switching locale.
+ * Why: must be a client component so `usePathname` reflects `/[lng]/…`; server-only links always pointed at locale roots.
+ * What for: passed into `SiteHeader` from `[lng]` layout — toggling language stays on the same logical page.
+ */
+
+import * as React from "react"
+import { usePathname } from "next/navigation"
+import { useT } from "next-i18next/client"
 
 import { AppLink } from "@/components/ui/app-link"
 import { cn } from "@/lib/utils"
-import { ROUTE } from "@/routes"
+import { swapLocaleInPath } from "@/lib/swap-locale-in-path"
 
 type LanguageToggleProps = {
   lng: string
   className?: string
 }
 
-/**
- * What: EN / GU links with labels from `common`.
- * Why: server component — locale comes from layout `[lng]`; no client hooks.
- * What for: passed into `SiteHeader` as a slot from the localized layout.
- */
-export default async function LanguageToggle({ lng, className }: LanguageToggleProps) {
-  const { t } = await getT("common", { lng })
+function LanguageToggle({ lng, className }: LanguageToggleProps) {
+  const { t } = useT("common")
+  const pathname = usePathname()
   const currentLng = lng === "en" || lng === "gu" ? lng : "gu"
+
+  /**
+   * What: append `#fragment` after client mount and on hash changes.
+   * Why: `usePathname()` omits the hash; preserving it keeps section anchors (e.g. home `#contact`) when switching language.
+   */
+  const [hashSuffix, setHashSuffix] = React.useState("")
+  React.useEffect(() => {
+    const sync = () => {
+      setHashSuffix(typeof window !== "undefined" ? window.location.hash : "")
+    }
+    sync()
+    window.addEventListener("hashchange", sync)
+    return () => window.removeEventListener("hashchange", sync)
+  }, [pathname])
+
+  const hrefEn = `${swapLocaleInPath(pathname, "en")}${hashSuffix}`
+  const hrefGu = `${swapLocaleInPath(pathname, "gu")}${hashSuffix}`
 
   return (
     <div className={cn("flex items-center gap-2 text-sm", className)}>
       <AppLink
-        href={ROUTE.en.path}
+        href={hrefEn}
         variant="navigation"
         size="sm"
         className={cn(
@@ -34,7 +57,7 @@ export default async function LanguageToggle({ lng, className }: LanguageToggleP
         {t("language.english")}
       </AppLink>
       <AppLink
-        href={ROUTE.gu.path}
+        href={hrefGu}
         variant="navigation"
         size="sm"
         className={cn(
@@ -49,3 +72,5 @@ export default async function LanguageToggle({ lng, className }: LanguageToggleP
     </div>
   )
 }
+
+export default LanguageToggle

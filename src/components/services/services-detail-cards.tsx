@@ -129,17 +129,6 @@ function ServicesDetailCards({
               <p className="mb-8 line-clamp-3 leading-relaxed text-on-surface-variant">
                 {copy.description}
               </p>
-              <AppLink
-                href={learnMoreHref}
-                variant="inline"
-                className="inline-flex items-center gap-2 font-bold text-primary no-underline hover:gap-4"
-              >
-                {copy.learnMore}
-                <ArrowRight
-                  className="size-4 transition-transform group-hover:translate-x-0.5"
-                  aria-hidden
-                />
-              </AppLink>
             </div>
           )
         )}

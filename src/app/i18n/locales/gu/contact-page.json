@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "description": "વીમા અને રોકાણ માટે સંપર્ક કરો. અમદાવાદ અને સુરતમાં અમારી ઓફિસ અથવા સંદેશ મોકલો."
+  },
+  "hero": {
+    "eyebrow": "સંપર્ક કરો / Contact Us",
+    "titleBefore": "તમારા ભવિષ્યને સુરક્ષિત કરવા માટે આજે જ ",
+    "titleEmphasis": "અમારો સંપર્ક કરો.",
+    "titleAfter": "",
+    "intro": "વીમા અને રોકાણ અંગેની કોઈપણ માહિતી માટે નીચે આપેલ ફોર્મ ભરો અથવા સીધો અમારો સંપર્ક કરો.",
+    "phoneLabel": "ફોન નંબર",
+    "emailLabel": "ઈમેઈલ"
+  },
+  "form": {
+    "title": "તમારી વિગતો અહીં જણાવો",
+    "name": "નામ (Name)",
+    "namePlaceholder": "તમારું પૂરું નામ",
+    "phone": "મોબાઈલ નંબર (Phone)",
+    "phonePlaceholder": "+91 00000 00000",
+    "service": "રસ ધરાવતી સેવા (Service Interest)",
+    "message": "સંદેશ (Message - Optional)",
+    "messagePlaceholder": "તમારી પૂછપરછ અહીં લખો...",
+    "submit": "વિગતો મોકલો (Submit Details)",
+    "mailSubject": "વેબસાઇટ પરથી પૂછપરછ",
+    "successHint": "જો ઇમેઇલ ખુલ્યું ન હોય તો તમારા ઉપકરણ પર ડિફોલ્ટ મેઇલ એપ તપાસો.",
+    "services": {
+      "life": "જીવન વીમો (Life Insurance)",
+      "health": "મેડિક્લેમ (Health Insurance)",
+      "mutualFunds": "મ્યુચ્યુઅલ ફંડ (Mutual Funds)",
+      "fd": "ફિક્સ ડિપોઝિટ (Fixed Deposits)",
+      "other": "અન્ય (Others)"
+    },
+    "errors": {
+      "nameRequired": "કૃપા કરીને નામ દાખલ કરો.",
+      "nameMin": "નામ ઓછામાં ઓછું 2 અક્ષરનું હોવું જોઈએ.",
+      "phoneRequired": "કૃપા કરીને ફોન નંબર દાખલ કરો.",
+      "phoneInvalid": "માન્ય ફોન નંબર દાખલ કરો.",
+      "serviceRequired": "કૃપા કરીને સેવા પસંદ કરો.",
+      "messageMax": "સંદેશ ખૂબ લાંબો છે."
+    }
+  },
+  "locations": {
+    "title": "અમારી ઓફિસ લોકેશન",
+    "subtitle": "અમદાવાદ અને સુરતમાં અમારી સેવાઓ ઉપલબ્ધ છે.",
+    "ahmedabad": {
+      "title": "અમદાવાદ ઓફિસ (Ahmedabad)",
+      "addressLine1": "૪૦૨, બિઝનેસ હબ, એસ.જી. હાઈવે,",
+      "addressLine2": "થલતેજ, અમદાવાદ - ૩૮૦૦૫૪.",
+      "mapCta": "નકશામાં જુઓ (View on Map)"
+    },
+    "surat": {
+      "title": "સુરત ઓફિસ (Surat)",
+      "addressLine1": "૧૦૫, ડાયમંડ વર્લ્ડ, વરાછા રોડ,",
+      "addressLine2": "સુરત - ૩૯૫૦૦૬.",
+      "mapCta": "નકશામાં જુઓ (View on Map)"
+    },
+    "mapImageAlt": "અમદાવાદનો નકશો",
+    "mapOverlay": "નકશો ખોલવા ક્લિક કરો",
+    "mapLinkAria": "નવી ટેબમાં અમદાવાદ વિસ્તારનો નકશો ખોલો"
+  }
+}

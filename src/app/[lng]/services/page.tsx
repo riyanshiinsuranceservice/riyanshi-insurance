@@ -3,7 +3,7 @@ import { ServicesDetailCards } from "@/components/services/services-detail-cards
 import { ServicesHeroSection } from "@/components/services/services-hero-section"
 import { PageWrapper } from "@/components/layout/page-wrapper"
 import { SITE_CONSULT_TEL, SITE_WHATSAPP_HREF } from "@/lib/site-contact"
-import { localizedHref } from "@/routes"
+import { localizedContactHref } from "@/routes"
 import { getT } from "next-i18next/server"
 import type { Metadata } from "next"
 
@@ -74,7 +74,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ lng: 
             description: t("cards.vehicle.description"),
             learnMore: t("cards.vehicle.learnMore"),
           }}
-          learnMoreHref={localizedHref(lng, "contact")}
+          learnMoreHref={localizedContactHref(lng)}
         />
         <SiteFinalCta
           title={th("finalCta.title")}

@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "title": "Medical & life insurance advice",
+    "description": "Get free guidance on health and life cover. IRDAI-approved advisor — Riyanshi Insurance & Investment."
+  },
+  "hero": {
+    "badge": "IRDAI approved advisor",
+    "titleStart": "Do you have ",
+    "titleMedical": "health",
+    "titleMiddle": " or ",
+    "titleLife": "life insurance",
+    "titleEnd": "?",
+    "subtitle": "Plan today for a secure future for you and your family. Get financial protection when life takes an unexpected turn.",
+    "chipMedicalLabel": "Health insurance",
+    "chipMedicalSub": "Health security",
+    "chipLifeLabel": "Life insurance",
+    "chipLifeSub": "Life protection"
+  },
+  "form": {
+    "title": "Get free advice",
+    "nameLabel": "Your name",
+    "namePlaceholder": "Enter your full name",
+    "phoneLabel": "Mobile number",
+    "phonePlaceholder": "+91 00000 00000",
+    "needLabel": "What you need",
+    "submit": "Send details now",
+    "whatsappCta": "Chat on WhatsApp",
+    "success": "Opening WhatsApp with your details…",
+    "submitError": "Something went wrong. Please try WhatsApp or call us.",
+    "errors": {
+      "name": "Please enter your name.",
+      "phoneMin": "Enter a valid mobile number.",
+      "phoneFormat": "Use digits only (10+ characters)."
+    },
+    "options": {
+      "medical": "Health insurance",
+      "life": "Life insurance",
+      "investment": "Investment plan"
+    },
+    "whatsappPrefill": "Hello, I'd like advice.\nName: {{name}}\nPhone: {{phone}}\nNeed: {{need}}"
+  },
+  "stats": {
+    "clients": "Happy clients",
+    "years": "Years experience",
+    "claims": "Claim settlement",
+    "support": "Customer support"
+  },
+  "statsValues": {
+    "clients": "5000+",
+    "years": "15+",
+    "claims": "99%",
+    "support": "24/7"
+  },
+  "services": {
+    "title": "Our core services",
+    "featuredBadge": "Most popular",
+    "featuredTitle": "Family health plan",
+    "featuredDescription": "Cover your whole family under one premium with quality care. Cashless hospitalisation and pre/post medical expenses.",
+    "featuredImageAlt": "Happy family in a bright modern living room",
+    "featuredBullet1": "5000+ network hospitals",
+    "featuredBullet2": "No-claim bonus",
+    "termTitle": "Term insurance",
+    "termDescription": "High life cover at a low premium. A secure future for your family.",
+    "investTitle": "Investment plans",
+    "investDescription": "Tax-saving options with the potential for strong, protected returns."
+  }
+}

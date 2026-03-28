@@ -1,0 +1,42 @@
+{
+  "hero": {
+    "badge": "Verified advisor",
+    "titleLine1": "Patel Insurance Services",
+    "titleEmphasis": "A trusted insurance advisor",
+    "titleLine2Suffix": " based in Ahmedabad.",
+    "intro": "For over a decade we have helped families plan financial protection and long-term investments with clear guidance. Transparency and service are at the heart of how we work.",
+    "chip1": "100% secure",
+    "chip2": "5000+ clients",
+    "imageAlt": "Professional financial advisor in a modern office, welcoming and confident",
+    "cardLabel": "Founding director",
+    "cardName": "Mr. Rajesh Patel"
+  },
+  "values": {
+    "title": "Our values and vision",
+    "intro": "We do not just sell policies—we build relationships and invest in trust.",
+    "v1": {
+      "title": "Full transparency",
+      "body": "We explain every policy detail clearly, with no hidden charges, so you can decide with confidence."
+    },
+    "v2": {
+      "title": "Clients first",
+      "body": "Your satisfaction comes first. We recommend plans that fit your needs—not sales targets."
+    },
+    "v3": {
+      "title": "Claims assistance",
+      "body": "When you need us, we are with you. We guide you through the entire claims process."
+    }
+  },
+  "office": {
+    "title": "Our office",
+    "addressLabel": "Address",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "address": "301, Sanidhya Complex,\nAshram Road, Ahmedabad - 380009",
+    "directionsCta": "Get directions",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Sanidhya+Complex+Ashram+Road+Ahmedabad+380009",
+    "mapAlt": "Map view of Ahmedabad highlighting the office location",
+    "phoneDisplay": "+91 98765 43210",
+    "emailDisplay": "info@riyanshiinsurance.com"
+  }
+}

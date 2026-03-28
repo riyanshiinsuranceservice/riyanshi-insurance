@@ -9,16 +9,34 @@ export const ROUTE_DEFINITIONS = {
   en: {
     path: "/en",
     nestedPath: {
+      about: {
+        path: "/about",
+      },
       services: {
         path: "/services",
+      },
+      lead: {
+        path: "/lead",
+      },
+      contact: {
+        path: "/contact",
       },
     },
   },
   gu: {
     path: "/gu",
     nestedPath: {
+      about: {
+        path: "/about",
+      },
       services: {
         path: "/services",
+      },
+      lead: {
+        path: "/lead",
+      },
+      contact: {
+        path: "/contact",
       },
     },
   },

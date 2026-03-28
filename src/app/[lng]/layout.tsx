@@ -30,7 +30,10 @@ export default async function RootLayout({
 }) {
   const { lng } = await params
 
-  const { i18n } = await getT(["common", "home", "servicesPage"], { lng })
+  const { i18n } = await getT(
+    ["common", "home", "servicesPage", "aboutPage", "leadLanding", "contactPage"],
+    { lng }
+  )
   const resources = getResources(i18n)
 
   return (

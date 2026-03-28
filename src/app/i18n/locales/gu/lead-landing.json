@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "title": "મેડિકલ અને લાઈફ ઇન્શ્યોરન્સ",
+    "description": "મેડિકલ અને લાઈફ કવર માટે મફત માર્ગદર્શન. IRDAI મંજૂર સલાહકાર — રિયાંશી ઇન્શ્યોરન્સ એન્ડ ઇન્વેસ્ટમેન્ટ."
+  },
+  "hero": {
+    "badge": "IRDAI મંજૂર સલાહકાર",
+    "titleStart": "શું તમારી પાસે ",
+    "titleMedical": "મેડિકલ",
+    "titleMiddle": " કે ",
+    "titleLife": "લાઈફ ઇન્શ્યોરન્સ",
+    "titleEnd": " છે?",
+    "subtitle": "તમારા અને તમારા પરિવારના સુરક્ષિત ભવિષ્ય માટે આજે જ સાચું આયોજન કરો. આકસ્મિક સંજોગોમાં આર્થિક સુરક્ષા મેળવો.",
+    "chipMedicalLabel": "મેડિકલ વીમો",
+    "chipMedicalSub": "Health Security",
+    "chipLifeLabel": "જીવન વીમો",
+    "chipLifeSub": "Life Protection"
+  },
+  "form": {
+    "title": "મફત સલાહ મેળવો",
+    "nameLabel": "તમારું નામ",
+    "namePlaceholder": "તમારું પૂરું નામ લખો",
+    "phoneLabel": "મોબાઈલ નંબર",
+    "phonePlaceholder": "+91 00000 00000",
+    "needLabel": "તમારી જરૂરિયાત",
+    "submit": "હમણાં જ વિગત મોકલો",
+    "whatsappCta": "WhatsApp ચેટ",
+    "success": "તમારી વિગતો સાથે WhatsApp ખુલ્લું થશે…",
+    "submitError": "કંઈક ખોટું થયું. કૃપા કરીને WhatsApp અથવા કૉલ કરો.",
+    "errors": {
+      "name": "કૃપા કરીને તમારું નામ દાખલ કરો.",
+      "phoneMin": "માન્ય મોબાઈલ નંબર દાખલ કરો.",
+      "phoneFormat": "ફક્ત અંકો (૧૦+ અંક)."
+    },
+    "options": {
+      "medical": "મેડિકલ ઇન્શ્યોરન્સ",
+      "life": "લાઈફ ઇન્શ્યોરન્સ",
+      "investment": "ઇન્વેસ્ટમેન્ટ પ્લાન"
+    },
+    "whatsappPrefill": "નમસ્તે, મને સલાહ જોઈએ છે.\nનામ: {{name}}\nફોન: {{phone}}\nજરૂરિયાત: {{need}}"
+  },
+  "stats": {
+    "clients": "સંતુષ્ટ ગ્રાહકો",
+    "years": "વર્ષનો અનુભવ",
+    "claims": "ક્લેમ સેટલમેન્ટ",
+    "support": "ગ્રાહક સહાય"
+  },
+  "statsValues": {
+    "clients": "5000+",
+    "years": "15+",
+    "claims": "99%",
+    "support": "24/7"
+  },
+  "services": {
+    "title": "અમારી મુખ્ય સેવાઓ",
+    "featuredBadge": "MOST POPULAR",
+    "featuredTitle": "ફેમિલી હેલ્થ પ્લાન",
+    "featuredDescription": "તમારા આખા પરિવાર માટે એક જ પ્રીમિયમમાં શ્રેષ્ઠ સારવારની સુવિધા. કેશલેસ હોસ્પિટલાઇઝેશન અને પ્રી-પોસ્ટ મેડિકલ ખર્ચનું કવર.",
+    "featuredImageAlt": "સ્વચ્છ આધુનિક લિવિંગ રૂમમાં ખુશ પરિવાર",
+    "featuredBullet1": "5000+ નેટવર્ક હોસ્પિટલ્સ",
+    "featuredBullet2": "નો-ક્લેમ બોનસ સુવિધા",
+    "termTitle": "ટર્મ ઇન્શ્યોરન્સ",
+    "termDescription": "ઓછા પ્રીમિયમમાં મોટું લાઈફ કવર. તમારા પરિવારના ભવિષ્યની ગેરંટી.",
+    "investTitle": "ઇન્વેસ્ટમેન્ટ પ્લાન્સ",
+    "investDescription": "ટેક્સ સેવિંગ અને ઊંચા વળતર સાથે સુરક્ષિત રોકાણના વિકલ્પો."
+  }
+}

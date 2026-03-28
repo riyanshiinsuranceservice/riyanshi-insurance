@@ -24,7 +24,13 @@ import { SiteLogo } from "@/components/layout/site-logo"
 import { isActiveNavHref } from "@/lib/nav-active"
 import { cn } from "@/lib/utils"
 import { SITE_CONSULT_TEL } from "@/lib/site-contact"
-import { localizedHref, localizedServicesHref } from "@/routes"
+import {
+  localizedAboutHref,
+  localizedContactHref,
+  localizedHref,
+  localizedLeadHref,
+  localizedServicesHref,
+} from "@/routes"
 
 /** Pixels scrolled before the bar pins — keeps the hero unobstructed, then locks nav for long pages. */
 const HEADER_PIN_SCROLL_PX = 48
@@ -244,9 +250,10 @@ function SiteHeader({ className, languageToggle }: SiteHeaderProps) {
 
   const navItems: NavItem[] = [
     { key: "home", label: t("nav.home"), href: localizedHref(lng) },
-    { key: "about", label: t("nav.about"), href: localizedHref(lng, "about") },
+    { key: "about", label: t("nav.about"), href: localizedAboutHref(lng) },
     { key: "services", label: t("nav.services"), href: localizedServicesHref(lng) },
-    { key: "contact", label: t("nav.contact"), href: localizedHref(lng, "contact") },
+    { key: "lead", label: t("nav.lead"), href: localizedLeadHref(lng) },
+    { key: "contact", label: t("nav.contact"), href: localizedContactHref(lng) },
   ]
 
   return (
