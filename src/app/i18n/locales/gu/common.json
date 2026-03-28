@@ -6,7 +6,6 @@
     "home": "હોમ",
     "about": "અમારા વિશે",
     "services": "સેવાઓ",
-    "lead": "મફત સલાહ",
     "contact": "સંપર્ક"
   },
   "header": {
@@ -18,6 +17,41 @@
   },
   "a11y": {
     "whatsappContact": "WhatsApp પર સંપર્ક કરો"
+  },
+  "servicesBento": {
+    "eyebrow": "What We Offer",
+    "title": "અમારી સેવાઓ (Services)",
+    "intro": "Comprehensive coverage for every aspect of your life and wealth building.",
+    "life": {
+      "title": "Life Insurance",
+      "description": "તમારા પરિવારના ઉજ્જવળ ભવિષ્ય માટે જીવન વીમો.",
+      "cta": "Learn More"
+    },
+    "health": {
+      "title": "Health Insurance",
+      "description": "તબીબી ખર્ચની ચિંતા છોડો, શ્રેષ્ઠ સારવાર મેળવો."
+    },
+    "investment": {
+      "title": "Investment",
+      "description": "તમારા પૈસાને સુરક્ષિત રીતે વધારો."
+    },
+    "vehicle": {
+      "title": "Vehicle Insurance",
+      "description": "તમારા વાહન માટે સંપૂર્ણ સુરક્ષા અને રોડ-સાઇડ આસિસ્ટન્સ.",
+      "cta": "Get Quote"
+    },
+    "customLine": "Looking for customized solutions?",
+    "viewAll": "View All Insurance Products"
+  },
+  "office": {
+    "title": "અમારું કાર્યાલય",
+    "addressLabel": "સરનામું",
+    "phoneLabel": "ફોન",
+    "emailLabel": "ઇમેઇલ",
+    "address": "301, સાનિધ્ય કોમ્પ્લેક્સ,\nઆશ્રમ રોડ, અમદાવાદ - 380009",
+    "directionsCta": "દિશાઓ મેળવો",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Sanidhya+Complex+Ashram+Road+Ahmedabad+380009",
+    "mapAlt": "અમદાવાદ શહેરનો નકશો ઓફિસ સ્થાન સાથે"
   },
   "footer": {
     "description": "Trusted partner for insurance and investment solutions in Gujarat since 2010. Providing peace of mind to thousands of families.",

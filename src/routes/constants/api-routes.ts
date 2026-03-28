@@ -15,9 +15,6 @@ export const ROUTE_DEFINITIONS = {
       services: {
         path: "/services",
       },
-      lead: {
-        path: "/lead",
-      },
       contact: {
         path: "/contact",
       },
@@ -31,9 +28,6 @@ export const ROUTE_DEFINITIONS = {
       },
       services: {
         path: "/services",
-      },
-      lead: {
-        path: "/lead",
       },
       contact: {
         path: "/contact",

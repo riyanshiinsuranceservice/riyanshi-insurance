@@ -1,15 +1,20 @@
 {
   "meta": {
-    "description": "Get in touch for insurance and investment guidance. Visit our Ahmedabad and Surat offices or send us a message."
+    "title": "Contact & free advice",
+    "description": "Health and life insurance guidance, office visit and contact details, and a quick inquiry form. IRDAI-approved advisor — Riyanshi Insurance & Investment."
   },
   "hero": {
-    "eyebrow": "Contact us",
-    "titleBefore": "Secure your future — ",
-    "titleEmphasis": "reach out today.",
-    "titleAfter": "",
-    "intro": "Fill in the form below or call us directly for any insurance or investment questions.",
-    "phoneLabel": "Phone",
-    "emailLabel": "Email"
+    "badge": "IRDAI approved advisor",
+    "titleStart": "Do you have ",
+    "titleMedical": "health",
+    "titleMiddle": " or ",
+    "titleLife": "life insurance",
+    "titleEnd": "?",
+    "subtitle": "Plan today for a secure future for you and your family. Get financial protection when life takes an unexpected turn.",
+    "chipMedicalLabel": "Health insurance",
+    "chipMedicalSub": "Health security",
+    "chipLifeLabel": "Life insurance",
+    "chipLifeSub": "Life protection"
   },
   "form": {
     "title": "Your details",
@@ -38,24 +43,5 @@
       "serviceRequired": "Please choose a service.",
       "messageMax": "Message is too long."
     }
-  },
-  "locations": {
-    "title": "Our office locations",
-    "subtitle": "We serve clients across Ahmedabad and Surat.",
-    "ahmedabad": {
-      "title": "Ahmedabad office",
-      "addressLine1": "402, Business Hub, S.G. Highway,",
-      "addressLine2": "Thaltej, Ahmedabad - 380054.",
-      "mapCta": "View on map"
-    },
-    "surat": {
-      "title": "Surat office",
-      "addressLine1": "105, Diamond World, Varachha Road,",
-      "addressLine2": "Surat - 395006.",
-      "mapCta": "View on map"
-    },
-    "mapImageAlt": "Map preview centred on Ahmedabad",
-    "mapOverlay": "Tap to open in Maps",
-    "mapLinkAria": "Open map for Ahmedabad area in a new tab"
   }
 }

@@ -6,7 +6,6 @@
     "home": "Home",
     "about": "About",
     "services": "Services",
-    "lead": "Free advice",
     "contact": "Contact"
   },
   "header": {
@@ -18,6 +17,41 @@
   },
   "a11y": {
     "whatsappContact": "Contact us on WhatsApp"
+  },
+  "servicesBento": {
+    "eyebrow": "What we offer",
+    "title": "Our services",
+    "intro": "Comprehensive coverage for every aspect of your life and wealth building.",
+    "life": {
+      "title": "Life insurance",
+      "description": "Life insurance for your family’s bright future.",
+      "cta": "Learn more"
+    },
+    "health": {
+      "title": "Health insurance",
+      "description": "Leave medical expense worries behind—get the best care."
+    },
+    "investment": {
+      "title": "Investment",
+      "description": "Grow your money safely and steadily."
+    },
+    "vehicle": {
+      "title": "Vehicle insurance",
+      "description": "Complete protection and roadside assistance for your vehicle.",
+      "cta": "Get quote"
+    },
+    "customLine": "Looking for customized solutions?",
+    "viewAll": "View all insurance products"
+  },
+  "office": {
+    "title": "Our office",
+    "addressLabel": "Address",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "address": "301, Sanidhya Complex,\nAshram Road, Ahmedabad - 380009",
+    "directionsCta": "Get directions",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Sanidhya+Complex+Ashram+Road+Ahmedabad+380009",
+    "mapAlt": "Map view of Ahmedabad highlighting the office location"
   },
   "footer": {
     "description": "Trusted partner for insurance and investment solutions in Gujarat since 2010. Providing peace of mind to thousands of families.",

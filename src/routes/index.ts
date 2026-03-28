@@ -3,7 +3,6 @@ export {
   localizedAboutHref,
   localizedContactHref,
   localizedHref,
-  localizedLeadHref,
   localizedServicesHref,
 } from "@/routes/utils/localized-href"
 export { buildRoutes, joinPaths, type RouteNode } from "@/routes/utils/api-routes"

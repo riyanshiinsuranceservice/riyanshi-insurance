@@ -26,17 +26,5 @@
       "title": "ક્લેમ આસિસ્ટન્સ",
       "body": "જ્યારે તમને જરૂર હોય, ત્યારે અમે તમારી સાથે ઉભા છીએ. ક્લેમની પ્રક્રિયામાં અમે સંપૂર્ણ માર્ગદર્શન પૂરું પાડીએ છીએ."
     }
-  },
-  "office": {
-    "title": "અમારું કાર્યાલય",
-    "addressLabel": "સરનામું",
-    "phoneLabel": "ફોન",
-    "emailLabel": "ઇમેઇલ",
-    "address": "301, સાનિધ્ય કોમ્પ્લેક્સ,\nઆશ્રમ રોડ, અમદાવાદ - 380009",
-    "directionsCta": "દિશાઓ મેળવો",
-    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Sanidhya+Complex+Ashram+Road+Ahmedabad+380009",
-    "mapAlt": "અમદાવાદ શહેરનો નકશો ઓફિસ સ્થાન સાથે",
-    "phoneDisplay": "+91 98765 43210",
-    "emailDisplay": "info@riyanshiinsurance.com"
   }
 }

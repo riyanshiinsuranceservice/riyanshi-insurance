@@ -23,31 +23,6 @@
       "description": "Expert financial planning tailored for you."
     }
   },
-  "services": {
-    "eyebrow": "What we offer",
-    "title": "Our services",
-    "intro": "Comprehensive coverage for every aspect of your life and wealth building.",
-    "life": {
-      "title": "Life insurance",
-      "description": "Life insurance for your family’s bright future.",
-      "cta": "Learn more"
-    },
-    "health": {
-      "title": "Health insurance",
-      "description": "Leave medical expense worries behind—get the best care."
-    },
-    "investment": {
-      "title": "Investment",
-      "description": "Grow your money safely and steadily."
-    },
-    "vehicle": {
-      "title": "Vehicle insurance",
-      "description": "Complete protection and roadside assistance for your vehicle.",
-      "cta": "Get quote"
-    },
-    "customLine": "Looking for customized solutions?",
-    "viewAll": "View all insurance products"
-  },
   "why": {
     "quote": "“Our goal isn’t just to sell a policy—it’s to secure your future.”",
     "eyebrow": "Our core values",

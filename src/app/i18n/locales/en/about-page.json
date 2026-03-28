@@ -26,17 +26,5 @@
       "title": "Claims assistance",
       "body": "When you need us, we are with you. We guide you through the entire claims process."
     }
-  },
-  "office": {
-    "title": "Our office",
-    "addressLabel": "Address",
-    "phoneLabel": "Phone",
-    "emailLabel": "Email",
-    "address": "301, Sanidhya Complex,\nAshram Road, Ahmedabad - 380009",
-    "directionsCta": "Get directions",
-    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Sanidhya+Complex+Ashram+Road+Ahmedabad+380009",
-    "mapAlt": "Map view of Ahmedabad highlighting the office location",
-    "phoneDisplay": "+91 98765 43210",
-    "emailDisplay": "info@riyanshiinsurance.com"
   }
 }

@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils"
 /**
  * What: shared marketing stats band (clients, years, claims, support).
  * Why: one layout and one i18n source (`leadLanding`) for every route that shows this proof row.
- * What for: lead and about pages — avoids duplicate props and diverging numbers.
+ * What for: contact and about pages — avoids duplicate props and diverging numbers.
  */
 
 type MarketingStatsSectionProps = {

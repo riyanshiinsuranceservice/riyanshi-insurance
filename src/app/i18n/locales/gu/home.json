@@ -23,31 +23,6 @@
       "description": "Expert financial planning tailored for you."
     }
   },
-  "services": {
-    "eyebrow": "What We Offer",
-    "title": "અમારી સેવાઓ (Services)",
-    "intro": "Comprehensive coverage for every aspect of your life and wealth building.",
-    "life": {
-      "title": "Life Insurance",
-      "description": "તમારા પરિવારના ઉજ્જવળ ભવિષ્ય માટે જીવન વીમો.",
-      "cta": "Learn More"
-    },
-    "health": {
-      "title": "Health Insurance",
-      "description": "તબીબી ખર્ચની ચિંતા છોડો, શ્રેષ્ઠ સારવાર મેળવો."
-    },
-    "investment": {
-      "title": "Investment",
-      "description": "તમારા પૈસાને સુરક્ષિત રીતે વધારો."
-    },
-    "vehicle": {
-      "title": "Vehicle Insurance",
-      "description": "તમારા વાહન માટે સંપૂર્ણ સુરક્ષા અને રોડ-સાઇડ આસિસ્ટન્સ.",
-      "cta": "Get Quote"
-    },
-    "customLine": "Looking for customized solutions?",
-    "viewAll": "View All Insurance Products"
-  },
   "why": {
     "quote": "“અમારું લક્ષ્ય માત્ર પોલિસી વેચવાનું નથી, પણ તમારા ભવિષ્યને સુરક્ષિત કરવાનું છે.”",
     "eyebrow": "Our Core Values",

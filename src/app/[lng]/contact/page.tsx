@@ -1,15 +1,17 @@
 import { ContactHeroSection } from "@/components/contact/contact-hero-section"
 import { ContactLeadForm } from "@/components/contact/contact-lead-form"
-import { ContactLocationsSection } from "@/components/contact/contact-locations-section"
 import { PageWrapper } from "@/components/layout/page-wrapper"
 import { SiteFinalCta } from "@/components/layout/site-final-cta"
+import { MarketingStatsSection } from "@/components/ui/marketing-stats-section"
+import { OfficeLocationSection } from "@/components/ui/office-location-section"
+import { ServicesBentoSection } from "@/components/ui/services-bento-section"
 import { SITE_CONSULT_TEL, SITE_WHATSAPP_HREF } from "@/lib/site-contact"
 import { getT } from "next-i18next/server"
 import type { Metadata } from "next"
 
 /**
- * What: localized contact + locations page from Stitch `contact_location`.
- * Why: route composes sections only; UI and copy live in `@/components/contact/*` and `contactPage` i18n.
+ * What: unified contact route — Stitch-style hero + bento, trust stats, shared office block, final CTA.
+ * Why: one URL for lead capture and visit/call intent; keeps the existing mailto `ContactLeadForm` instead of the Stitch form.
  */
 export async function generateMetadata({
   params,
@@ -20,7 +22,7 @@ export async function generateMetadata({
   const { t } = await getT("contactPage", { lng })
   const { t: tc } = await getT("common", { lng })
   return {
-    title: `${tc("nav.contact")} | ${tc("brand")}`,
+    title: `${t("meta.title")} | ${tc("brand")}`,
     description: t("meta.description"),
   }
 }
@@ -32,37 +34,29 @@ export default async function ContactPage({ params }: { params: Promise<{ lng: s
 
   return (
     <main className="w-full pb-20">
-      <PageWrapper className="pt-10 md:pt-12">
+      <PageWrapper className="pt-10 md:pt-12" spacing="comfortable">
         <ContactHeroSection
-          eyebrow={t("hero.eyebrow")}
-          titleBefore={t("hero.titleBefore")}
-          titleEmphasis={t("hero.titleEmphasis")}
-          titleAfter={t("hero.titleAfter")}
-          intro={t("hero.intro")}
-          phoneLabel={t("hero.phoneLabel")}
-          emailLabel={t("hero.emailLabel")}
+          badge={t("hero.badge")}
+          titleStart={t("hero.titleStart")}
+          titleMedical={t("hero.titleMedical")}
+          titleMiddle={t("hero.titleMiddle")}
+          titleLife={t("hero.titleLife")}
+          titleEnd={t("hero.titleEnd")}
+          subtitle={t("hero.subtitle")}
+          chipMedicalLabel={t("hero.chipMedicalLabel")}
+          chipMedicalSub={t("hero.chipMedicalSub")}
+          chipLifeLabel={t("hero.chipLifeLabel")}
+          chipLifeSub={t("hero.chipLifeSub")}
           formTitle={t("form.title")}
           formSlot={<ContactLeadForm />}
         />
-        <ContactLocationsSection
-          title={t("locations.title")}
-          subtitle={t("locations.subtitle")}
-          ahmedabad={{
-            title: t("locations.ahmedabad.title"),
-            addressLine1: t("locations.ahmedabad.addressLine1"),
-            addressLine2: t("locations.ahmedabad.addressLine2"),
-            mapCta: t("locations.ahmedabad.mapCta"),
-          }}
-          surat={{
-            title: t("locations.surat.title"),
-            addressLine1: t("locations.surat.addressLine1"),
-            addressLine2: t("locations.surat.addressLine2"),
-            mapCta: t("locations.surat.mapCta"),
-          }}
-          mapImageAlt={t("locations.mapImageAlt")}
-          mapOverlay={t("locations.mapOverlay")}
-          mapLinkAria={t("locations.mapLinkAria")}
-        />
+
+        <MarketingStatsSection lng={lng} />
+
+        <ServicesBentoSection lng={lng} />
+
+        <OfficeLocationSection lng={lng} />
+
         <SiteFinalCta
           title={th("finalCta.title")}
           description={th("finalCta.description")}

@@ -1,11 +1,11 @@
 import { SiteFinalCta } from "@/components/layout/site-final-cta"
 import { HomeHero } from "@/components/home/home-hero"
-import { HomeServicesBento } from "@/components/home/home-services-bento"
+import { ServicesBentoSection } from "@/components/ui/services-bento-section"
 import { HomeTrustHighlights } from "@/components/home/home-trust-highlights"
 import { HomeWhyChoose } from "@/components/home/home-why-choose"
 import { PageWrapper } from "@/components/layout/page-wrapper"
 import { SITE_CONSULT_TEL, SITE_WHATSAPP_HREF } from "@/lib/site-contact"
-import { localizedContactHref, localizedServicesHref } from "@/routes"
+import { localizedContactHref } from "@/routes"
 import { getT } from "next-i18next/server"
 
 export default async function Page({ params }: { params: Promise<{ lng: string }> }) {
@@ -45,34 +45,7 @@ export default async function Page({ params }: { params: Promise<{ lng: string }
           ]}
         />
 
-        <HomeServicesBento
-          eyebrow={th("services.eyebrow")}
-          title={th("services.title")}
-          intro={th("services.intro")}
-          life={{
-            title: th("services.life.title"),
-            description: th("services.life.description"),
-            cta: th("services.life.cta"),
-            learnMoreHref: localizedServicesHref(lng),
-          }}
-          health={{
-            title: th("services.health.title"),
-            description: th("services.health.description"),
-          }}
-          investment={{
-            title: th("services.investment.title"),
-            description: th("services.investment.description"),
-          }}
-          vehicle={{
-            title: th("services.vehicle.title"),
-            description: th("services.vehicle.description"),
-            cta: th("services.vehicle.cta"),
-            quoteHref: localizedContactHref(lng),
-          }}
-          customLine={th("services.customLine")}
-          viewAllLabel={th("services.viewAll")}
-          viewAllHref={localizedServicesHref(lng)}
-        />
+        <ServicesBentoSection lng={lng} homeServicesAnchor />
 
         <HomeWhyChoose
           quote={th("why.quote")}

@@ -3,29 +3,15 @@ import Image from "next/image"
 import { ExternalLink, Mail, MapPin, Phone } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
+import { SITE_CONSULT_TEL, SITE_INQUIRY_EMAIL, SITE_PHONE_DISPLAY } from "@/lib/site-contact"
 import { cn } from "@/lib/utils"
+import { getT } from "next-i18next/server"
 
-/**
- * What: office location — contact tiles, directions CTA, and map — tuned for small screens first.
- * Why: side-by-side at `md` squeezed copy beside a tall map; we stack until `lg` and use `min-w-0` + word breaking so nothing clips.
- * What for: about page; matches primary/secondary tokens and card elevation used elsewhere.
- */
+const MAP_IMAGE =
+  "https://lh3.googleusercontent.com/aida-public/AB6AXuCm2l9_Gr8RwuEGpr9JtfsWaS4YA0UwNhlFyfSVDPkIeUjt3_lijSBwkKnaj5wrTnbpa-M2GSXGSUlaN5ce_ZFx7dCs0En2fto1Ewa4Cc3wmk2BimA7TGFe0V_MsgMJOieOTRv3330qURSndiLa0pyfPjczeqUTVdLtl4FkFNf5lleOBWBka6C_e6rtKWMY21FctIHkOrm-ghmXadR7WweaBYYRTT061XJgGICo4MXgu0zvrMYI4X63nSe4m7o9M_swLtXik3UUDKg"
 
-type AboutOfficeSectionProps = {
-  title: string
-  addressLabel: string
-  phoneLabel: string
-  emailLabel: string
-  /** Multi-line address; newlines render as breaks via `whitespace-pre-line`. */
-  address: string
-  phoneDisplay: string
-  phoneHref: string
-  emailDisplay: string
-  emailHref: string
-  directionsLabel: string
-  mapsUrl: string
-  mapImageSrc: string
-  mapImageAlt: string
+type OfficeLocationSectionProps = {
+  lng: string
 }
 
 type ContactRowProps = {
@@ -53,21 +39,15 @@ function ContactRow({ icon, label, children }: ContactRowProps) {
   )
 }
 
-function AboutOfficeSection({
-  title,
-  addressLabel,
-  phoneLabel,
-  emailLabel,
-  address,
-  phoneDisplay,
-  phoneHref,
-  emailDisplay,
-  emailHref,
-  directionsLabel,
-  mapsUrl,
-  mapImageSrc,
-  mapImageAlt,
-}: AboutOfficeSectionProps) {
+/**
+ * What: primary office block — address, phone, email, directions, and map — shared by about and contact.
+ * Why: one layout and `common.office` copy; phone/email values come from `@/lib/site-contact` so CTAs stay consistent.
+ * What for: physical trust on marketing pages without duplicating props from each route.
+ */
+async function OfficeLocationSection({ lng }: OfficeLocationSectionProps) {
+  const { t } = await getT("common", { lng })
+  const emailHref = `mailto:${SITE_INQUIRY_EMAIL}`
+
   return (
     <section className="surface-low px-4 py-14 sm:px-6 md:py-20">
       <div className="mx-auto max-w-7xl">
@@ -77,35 +57,34 @@ function AboutOfficeSection({
             "flex flex-col lg:flex-row lg:items-stretch"
           )}
         >
-          {/* Copy first on all breakpoints — full width until lg prevents cramped columns on tablets */}
           <div className="order-1 flex w-full min-w-0 flex-col p-6 sm:p-8 lg:order-0 lg:max-w-104 lg:shrink-0 xl:max-w-md lg:p-10 xl:p-12">
             <h2 className="mb-6 font-display text-2xl font-bold tracking-tight text-primary sm:mb-8 sm:text-3xl">
-              {title}
+              {t("office.title")}
             </h2>
 
             <div className="flex flex-col gap-3 sm:gap-4">
               <div className="rounded-xl border border-outline-variant/10 bg-surface-container-low p-4 sm:p-5">
-                <ContactRow icon={<MapPin className="size-5" strokeWidth={2} />} label={addressLabel}>
-                  <p className="whitespace-pre-line">{address}</p>
+                <ContactRow icon={<MapPin className="size-5" strokeWidth={2} />} label={t("office.addressLabel")}>
+                  <p className="whitespace-pre-line">{t("office.address")}</p>
                 </ContactRow>
               </div>
               <div className="rounded-xl border border-outline-variant/10 bg-surface-container-low p-4 sm:p-5">
-                <ContactRow icon={<Phone className="size-5" strokeWidth={2} />} label={phoneLabel}>
+                <ContactRow icon={<Phone className="size-5" strokeWidth={2} />} label={t("office.phoneLabel")}>
                   <a
-                    href={phoneHref}
+                    href={SITE_CONSULT_TEL}
                     className="text-primary underline-offset-2 transition-colors hover:text-primary-container hover:underline focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                   >
-                    {phoneDisplay}
+                    {SITE_PHONE_DISPLAY}
                   </a>
                 </ContactRow>
               </div>
               <div className="rounded-xl border border-outline-variant/10 bg-surface-container-low p-4 sm:p-5">
-                <ContactRow icon={<Mail className="size-5" strokeWidth={2} />} label={emailLabel}>
+                <ContactRow icon={<Mail className="size-5" strokeWidth={2} />} label={t("office.emailLabel")}>
                   <a
                     href={emailHref}
                     className="break-all text-primary underline-offset-2 transition-colors hover:text-primary-container hover:underline focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                   >
-                    {emailDisplay}
+                    {SITE_INQUIRY_EMAIL}
                   </a>
                 </ContactRow>
               </div>
@@ -117,18 +96,17 @@ function AboutOfficeSection({
               size="lg"
               className="mt-8 w-full gap-2 rounded-xl px-6 py-6 text-base font-bold sm:w-auto sm:self-start"
             >
-              <a href={mapsUrl} target="_blank" rel="noopener noreferrer">
-                {directionsLabel}
+              <a href={t("office.mapsUrl")} target="_blank" rel="noopener noreferrer">
+                {t("office.directionsCta")}
                 <ExternalLink className="size-4 opacity-90" aria-hidden />
               </a>
             </Button>
           </div>
 
-          {/* Map: predictable height on small screens; grows in the row on large screens */}
           <div className="relative order-2 aspect-5/4 w-full min-h-0 sm:aspect-16/10 lg:order-0 lg:min-h-[min(24rem,50vh)] lg:flex-1 lg:aspect-auto">
             <Image
-              src={mapImageSrc}
-              alt={mapImageAlt}
+              src={MAP_IMAGE}
+              alt={t("office.mapAlt")}
               fill
               className="object-cover"
               sizes="(min-width: 1024px) 55vw, 100vw"
@@ -145,4 +123,4 @@ function AboutOfficeSection({
   )
 }
 
-export { AboutOfficeSection, type AboutOfficeSectionProps }
+export { OfficeLocationSection, type OfficeLocationSectionProps }

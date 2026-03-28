@@ -28,7 +28,6 @@ import {
   localizedAboutHref,
   localizedContactHref,
   localizedHref,
-  localizedLeadHref,
   localizedServicesHref,
 } from "@/routes"
 
@@ -252,7 +251,6 @@ function SiteHeader({ className, languageToggle }: SiteHeaderProps) {
     { key: "home", label: t("nav.home"), href: localizedHref(lng) },
     { key: "about", label: t("nav.about"), href: localizedAboutHref(lng) },
     { key: "services", label: t("nav.services"), href: localizedServicesHref(lng) },
-    { key: "lead", label: t("nav.lead"), href: localizedLeadHref(lng) },
     { key: "contact", label: t("nav.contact"), href: localizedContactHref(lng) },
   ]
 
