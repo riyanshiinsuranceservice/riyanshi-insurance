@@ -301,16 +301,7 @@ async function SiteFooter({ lng }: SiteFooterProps) {
       </div>
 
       <div className="border-t border-outline-variant/20 bg-primary/4 dark:bg-primary/10">
-        <div className="mx-auto flex w-full max-w-7xl flex-col gap-2 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-6 sm:py-3 lg:px-8">
-          <AppLink
-            href={homeHref}
-            variant="navigation"
-            size="sm"
-            className="shrink-0 self-start rounded-md transition-opacity hover:opacity-85 sm:self-auto"
-            aria-label={t("nav.home")}
-          >
-            <SiteLogo label={t("brand")} size="sm" />
-          </AppLink>
+        <div className="mx-auto text-center flex w-full max-w-7xl flex-col gap-2 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-6 sm:py-3 lg:px-8">
           <p className="text-pretty text-[11px] leading-snug text-on-surface-variant sm:flex-1 sm:text-xs">
             {t("footer.copyright")}
           </p>
