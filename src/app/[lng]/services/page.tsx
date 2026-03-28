@@ -3,7 +3,8 @@ import { ServicesDetailCards } from "@/components/services/services-detail-cards
 import { ServicesHeroSection } from "@/components/services/services-hero-section"
 import { PageWrapper } from "@/components/layout/page-wrapper"
 import { SITE_CONSULT_TEL, SITE_WHATSAPP_HREF } from "@/lib/site-contact"
-import { localizedContactHref } from "@/routes"
+import { generateSeoMetaData } from "@/site-config"
+import { localizedContactHref, localizedServicesHref } from "@/routes"
 import { getT } from "next-i18next/server"
 import type { Metadata } from "next"
 
@@ -22,10 +23,12 @@ export async function generateMetadata({
   const { lng } = await params
   const { t } = await getT("servicesPage", { lng })
   const { t: tc } = await getT("common", { lng })
-  return {
+  return generateSeoMetaData({
     title: `${tc("nav.services")} | ${tc("brand")}`,
     description: t("hero.intro"),
-  }
+    canonicalPath: localizedServicesHref(lng),
+    lng,
+  })
 }
 
 export default async function ServicesPage({ params }: { params: Promise<{ lng: string }> }) {

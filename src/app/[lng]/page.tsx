@@ -5,8 +5,26 @@ import { HomeTrustHighlights } from "@/components/home/home-trust-highlights"
 import { HomeWhyChoose } from "@/components/home/home-why-choose"
 import { PageWrapper } from "@/components/layout/page-wrapper"
 import { SITE_CONSULT_TEL, SITE_WHATSAPP_HREF } from "@/lib/site-contact"
-import { localizedContactHref } from "@/routes"
+import { generateSeoMetaData } from "@/site-config"
+import { localizedContactHref, localizedHref } from "@/routes"
 import { getT } from "next-i18next/server"
+import type { Metadata } from "next"
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lng: string }>
+}): Promise<Metadata> {
+  const { lng } = await params
+  const { t: tc } = await getT("common", { lng })
+  const { t: th } = await getT("home", { lng })
+  return generateSeoMetaData({
+    title: `${tc("nav.home")} | ${tc("brand")}`,
+    description: th("hero.subtitle"),
+    canonicalPath: localizedHref(lng),
+    lng,
+  })
+}
 
 export default async function Page({ params }: { params: Promise<{ lng: string }> }) {
   const { lng } = await params

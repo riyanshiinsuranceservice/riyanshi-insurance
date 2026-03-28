@@ -12,7 +12,7 @@ const appLinkVariants = cva(
         inline:
           "text-primary underline decoration-[1.5px] underline-offset-2 hover:text-primary-container dark:text-primary-fixed",
         navigation:
-          "text-on-surface underline-offset-[0.35rem] decoration-primary no-underline hover:text-primary hover:underline hover:decoration-2 dark:text-foreground dark:decoration-primary-fixed dark:hover:text-primary-fixed",
+          "text-on-surface underline-offset-[0.35rem] decoration-primary no-underline dark:text-foreground dark:decoration-primary-fixed dark:hover:text-primary-fixed",
         external:
           "text-primary underline decoration-[1.5px] underline-offset-2 hover:text-brand-secondary dark:text-primary-fixed dark:hover:text-secondary-fixed",
       },

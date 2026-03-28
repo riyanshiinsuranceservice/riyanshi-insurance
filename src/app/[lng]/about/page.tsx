@@ -5,6 +5,8 @@ import { AboutValuesSection } from "@/components/about/about-values-section"
 import { PageWrapper } from "@/components/layout/page-wrapper"
 import { SiteFinalCta } from "@/components/layout/site-final-cta"
 import { SITE_CONSULT_TEL, SITE_WHATSAPP_HREF } from "@/lib/site-contact"
+import { generateSeoMetaData } from "@/site-config"
+import { localizedAboutHref } from "@/routes"
 import { getT } from "next-i18next/server"
 import type { Metadata } from "next"
 
@@ -23,10 +25,12 @@ export async function generateMetadata({
   const { lng } = await params
   const { t } = await getT("aboutPage", { lng })
   const { t: tc } = await getT("common", { lng })
-  return {
+  return generateSeoMetaData({
     title: `${tc("nav.about")} | ${tc("brand")}`,
     description: t("hero.intro"),
-  }
+    canonicalPath: localizedAboutHref(lng),
+    lng,
+  })
 }
 
 export default async function AboutPage({ params }: { params: Promise<{ lng: string }> }) {

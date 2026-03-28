@@ -6,6 +6,8 @@ import { MarketingStatsSection } from "@/components/ui/marketing-stats-section"
 import { OfficeLocationSection } from "@/components/ui/office-location-section"
 import { ServicesBentoSection } from "@/components/ui/services-bento-section"
 import { SITE_CONSULT_TEL, SITE_WHATSAPP_HREF } from "@/lib/site-contact"
+import { generateSeoMetaData } from "@/site-config"
+import { localizedContactHref } from "@/routes"
 import { getT } from "next-i18next/server"
 import type { Metadata } from "next"
 
@@ -21,10 +23,12 @@ export async function generateMetadata({
   const { lng } = await params
   const { t } = await getT("contactPage", { lng })
   const { t: tc } = await getT("common", { lng })
-  return {
+  return generateSeoMetaData({
     title: `${t("meta.title")} | ${tc("brand")}`,
     description: t("meta.description"),
-  }
+    canonicalPath: localizedContactHref(lng),
+    lng,
+  })
 }
 
 export default async function ContactPage({ params }: { params: Promise<{ lng: string }> }) {

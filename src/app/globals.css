@@ -127,7 +127,7 @@
 /* Prevent harsh black usage */
 @layer utilities {
   .text-black {
-    color: theme(colors.on-surface) !important;
+    color: var(--color-on-surface) !important;
   }
 }
 
