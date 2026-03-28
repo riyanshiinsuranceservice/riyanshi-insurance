@@ -4,5 +4,11 @@
  * What for: `SITE_CONFIG`, `getSiteBaseUrl`, and `generateSeoMetaData`.
  */
 
-export { SITE_CONFIG, getSiteBaseUrl } from "./site-config.constants"
+export {
+  SITE_CONFIG,
+  DEFAULT_INQUIRY_RECIPIENT_EMAIL,
+  DEFAULT_SITE_BASE_URL,
+  getInquiryRecipientEmail,
+  getSiteBaseUrl,
+} from "./site-config.constants"
 export { generateSeoMetaData, type GenerateSeoMetaDataInput } from "./generate-seo-metadata"

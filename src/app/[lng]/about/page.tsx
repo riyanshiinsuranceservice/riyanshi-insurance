@@ -4,14 +4,11 @@ import { OfficeLocationSection } from "@/components/ui/office-location-section"
 import { AboutValuesSection } from "@/components/about/about-values-section"
 import { PageWrapper } from "@/components/layout/page-wrapper"
 import { SiteFinalCta } from "@/components/layout/site-final-cta"
-import { SITE_CONSULT_TEL, SITE_WHATSAPP_HREF } from "@/lib/site-contact"
+import { SITE_CONSULT_TEL, SITE_MEDIA, SITE_WHATSAPP_HREF } from "@/lib/site-contact"
 import { generateSeoMetaData } from "@/site-config"
 import { localizedAboutHref } from "@/routes"
 import { getT } from "next-i18next/server"
 import type { Metadata } from "next"
-
-const HERO_IMAGE =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuDg63YwPtL16oL1HGX81pufV4l0-YLQN2gfzwrsVl7JY0Ceq0pLk9480jNTxhdhid-4mY0OQNZdroQ7EzbVJ6H4PxJHA_-qEuL-alGeT0fXiIq13jXuKIGS5Sv71OQhy0ouVqqIeDt1UQ0cOdYQ6m2OPb7ea6eWOI4owyJdGPkUwLvikWZDEm7suQzjymPEa7JhPVyLRU5Yy-KV1PIv971vuFAm7GwmsgE_UzimavmqjUv6aW2dCdGorYLns172rPtEgIzUvqTvVdY"
 
 /**
  * What: localized `/about` marketing page from Stitch `about_us`.
@@ -50,7 +47,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lng: str
           intro={t("hero.intro")}
           chip1={t("hero.chip1")}
           chip2={t("hero.chip2")}
-          imageSrc={HERO_IMAGE}
+          imageSrc={SITE_MEDIA.aboutHero}
           imageAlt={t("hero.imageAlt")}
           cardLabel={t("hero.cardLabel")}
           cardName={t("hero.cardName")}

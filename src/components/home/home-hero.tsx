@@ -4,9 +4,6 @@ import { ArrowRight, ShieldCheck } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
-const HERO_IMAGE =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuD73up3w9fM2qUSW-xiczkB_AhLgenkYBapF0MPEEfwxJFfppw2nd9YWGkYg1_SvSaIiTYzSlpc5IIFHN7QTeL3_zPEpz3QvICuJH6U1uNW-SG1AsKK-HUqp85HTgCm_q5pReJh7Z5Y5nruHml4QfDiq2oMUjshCJv41vPUaKTc9eD7WTYlLYVYxI9mODEdk_ZIMVUeDx991fGQF3hwDQqgHbOodRGLP3jiDZzwJPSnGHhjVaDpxapZvltq26oYPYYM6n-XaH71MYA"
-
 type HomeHeroProps = {
   badge: string
   title: string
@@ -18,6 +15,8 @@ type HomeHeroProps = {
   cardLabel: string
   cardValue: string
   cardSub: string
+  /** From `SITE_CONFIG.media.homeHero` — remote URL allowed by `next.config` `images.remotePatterns`. */
+  heroImageSrc: string
 }
 
 /**
@@ -36,6 +35,7 @@ function HomeHero({
   cardLabel,
   cardValue,
   cardSub,
+  heroImageSrc,
 }: HomeHeroProps) {
   return (
     <section className="relative flex min-h-[min(52rem,90svh)] items-center overflow-hidden bg-surface">
@@ -75,7 +75,7 @@ function HomeHero({
           />
           <div className="relative max-md:w-4/5 max-md:mx-auto aspect-square rotate-2 overflow-hidden rounded-2xl shadow-2xl transition-transform duration-500 hover:rotate-0">
             <Image
-              src={HERO_IMAGE}
+              src={heroImageSrc}
               alt=""
               fill
               className="object-cover"

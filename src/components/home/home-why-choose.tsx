@@ -11,24 +11,29 @@ type HomeWhyChooseProps = {
   eyebrow: string
   title: string
   points: WhyPoint[]
+  /** From `SITE_CONFIG.media.homeWhyChoose`. */
+  consultationImageSrc: string
 }
-
-const CONSULT_IMAGE =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuBNkxKYmC09ap7XsFs9D97Wd4fh-U6HcYB5Kw30eHplNgKs0r0Oxt2hNDHEDSkJV2MLhT8QtnqQyzEgAqhdQR5rd1tt0HyRG6LwuudcMJ3AYsJZtsI31KX_dVygWw0GwhZCMFGJD1slAtRXmDvYZdRTaPJzTSy2Nn0oGsPnqGqBw8gcUuR0PaQyFuQ2TgXf7Edz6-mlu1V10xY6T9R-AXy9sycFy4zF4byUykLT8cga3hvhqvpUjwgkRo457-eGUCDxEsuxUu21f6Y"
 
 /**
  * What: split layout with consultation imagery, pull-quote, and checklist values.
  * Why: mirrors stitch “Why Choose Us” with editorial overlap and hover rows.
  * What for: differentiators before the closing CTA.
  */
-function HomeWhyChoose({ quote, eyebrow, title, points }: HomeWhyChooseProps) {
+function HomeWhyChoose({
+  quote,
+  eyebrow,
+  title,
+  points,
+  consultationImageSrc,
+}: HomeWhyChooseProps) {
   return (
     <section className="bg-surface-container-lowest py-16 md:py-24">
       <div className="mx-auto grid w-full max-w-7xl items-center gap-16 px-6 md:grid-cols-2">
         <div className="relative">
           <div className="overflow-hidden rounded-3xl shadow-2xl">
             <Image
-              src={CONSULT_IMAGE}
+              src={consultationImageSrc}
               alt=""
               width={1200}
               height={900}

@@ -3,12 +3,15 @@ import Image from "next/image"
 import { ExternalLink, Mail, MapPin, Phone } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import { SITE_CONSULT_TEL, SITE_INQUIRY_EMAIL, SITE_PHONE_DISPLAY } from "@/lib/site-contact"
+import {
+  SITE_CONSULT_TEL,
+  SITE_INQUIRY_EMAIL,
+  SITE_MAPS_URL,
+  SITE_MEDIA,
+  SITE_PHONE_DISPLAY,
+} from "@/lib/site-contact"
 import { cn } from "@/lib/utils"
 import { getT } from "next-i18next/server"
-
-const MAP_IMAGE =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuCm2l9_Gr8RwuEGpr9JtfsWaS4YA0UwNhlFyfSVDPkIeUjt3_lijSBwkKnaj5wrTnbpa-M2GSXGSUlaN5ce_ZFx7dCs0En2fto1Ewa4Cc3wmk2BimA7TGFe0V_MsgMJOieOTRv3330qURSndiLa0pyfPjczeqUTVdLtl4FkFNf5lleOBWBka6C_e6rtKWMY21FctIHkOrm-ghmXadR7WweaBYYRTT061XJgGICo4MXgu0zvrMYI4X63nSe4m7o9M_swLtXik3UUDKg"
 
 type OfficeLocationSectionProps = {
   lng: string
@@ -41,7 +44,7 @@ function ContactRow({ icon, label, children }: ContactRowProps) {
 
 /**
  * What: primary office block — address, phone, email, directions, and map — shared by about and contact.
- * Why: one layout and `common.office` copy; phone/email values come from `@/lib/site-contact` so CTAs stay consistent.
+ * Why: one layout and `common.office` copy; phone, email, maps URL, and map image come from site config / `@/lib/site-contact`.
  * What for: physical trust on marketing pages without duplicating props from each route.
  */
 async function OfficeLocationSection({ lng }: OfficeLocationSectionProps) {
@@ -96,7 +99,7 @@ async function OfficeLocationSection({ lng }: OfficeLocationSectionProps) {
               size="lg"
               className="mt-8 w-full gap-2 rounded-xl px-6 py-6 text-base font-bold sm:w-auto sm:self-start"
             >
-              <a href={t("office.mapsUrl")} target="_blank" rel="noopener noreferrer">
+              <a href={SITE_MAPS_URL} target="_blank" rel="noopener noreferrer">
                 {t("office.directionsCta")}
                 <ExternalLink className="size-4 opacity-90" aria-hidden />
               </a>
@@ -105,7 +108,7 @@ async function OfficeLocationSection({ lng }: OfficeLocationSectionProps) {
 
           <div className="relative order-2 aspect-5/4 w-full min-h-0 sm:aspect-16/10 lg:order-0 lg:min-h-[min(24rem,50vh)] lg:flex-1 lg:aspect-auto">
             <Image
-              src={MAP_IMAGE}
+              src={SITE_MEDIA.officeMap}
               alt={t("office.mapAlt")}
               fill
               className="object-cover"

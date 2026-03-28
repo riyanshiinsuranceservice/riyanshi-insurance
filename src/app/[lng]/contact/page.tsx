@@ -1,5 +1,6 @@
 import { ContactHeroSection } from "@/components/contact/contact-hero-section"
 import { ContactLeadForm } from "@/components/contact/contact-lead-form"
+import type { InquiryLocale } from "@/lib/inquiry-schema"
 import { PageWrapper } from "@/components/layout/page-wrapper"
 import { SiteFinalCta } from "@/components/layout/site-final-cta"
 import { MarketingStatsSection } from "@/components/ui/marketing-stats-section"
@@ -13,7 +14,7 @@ import type { Metadata } from "next"
 
 /**
  * What: unified contact route — Stitch-style hero + bento, trust stats, shared office block, final CTA.
- * Why: one URL for lead capture and visit/call intent; keeps the existing mailto `ContactLeadForm` instead of the Stitch form.
+ * Why: one URL for lead capture and visit/call intent; `ContactLeadForm` posts to `/api/inquiry` (Gmail via Nodemailer).
  */
 export async function generateMetadata({
   params,
@@ -33,6 +34,7 @@ export async function generateMetadata({
 
 export default async function ContactPage({ params }: { params: Promise<{ lng: string }> }) {
   const { lng } = await params
+  const inquiryLocale: InquiryLocale = lng === "gu" ? "gu" : "en"
   const { t } = await getT("contactPage", { lng })
   const { t: th } = await getT("home", { lng })
 
@@ -52,7 +54,7 @@ export default async function ContactPage({ params }: { params: Promise<{ lng: s
           chipLifeLabel={t("hero.chipLifeLabel")}
           chipLifeSub={t("hero.chipLifeSub")}
           formTitle={t("form.title")}
-          formSlot={<ContactLeadForm />}
+          formSlot={<ContactLeadForm locale={inquiryLocale} />}
         />
 
         <MarketingStatsSection lng={lng} />

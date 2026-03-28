@@ -2,14 +2,11 @@ import { SiteFinalCta } from "@/components/layout/site-final-cta"
 import { ServicesDetailCards } from "@/components/services/services-detail-cards"
 import { ServicesHeroSection } from "@/components/services/services-hero-section"
 import { PageWrapper } from "@/components/layout/page-wrapper"
-import { SITE_CONSULT_TEL, SITE_WHATSAPP_HREF } from "@/lib/site-contact"
+import { SITE_CONSULT_TEL, SITE_MEDIA, SITE_WHATSAPP_HREF } from "@/lib/site-contact"
 import { generateSeoMetaData } from "@/site-config"
 import { localizedContactHref, localizedServicesHref } from "@/routes"
 import { getT } from "next-i18next/server"
 import type { Metadata } from "next"
-
-const HERO_IMAGE =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuAVpVdiAkdBZV2SvXwyqwAS0Nm5YFmZwXSfU8NO7uBFq81K8gdssK1_4qolbIVlUp5yJVMAsEOKb6Q0Ftb27C0bhI4CMIenWXFGmlWXyQDfUCgHQiEP_jTx4_vNYJzcVN4YOXrhtzV_0UrOEmHCrKbox_FCf2_UceeSgYwYu7hki6FflvGnjAMTNukLX-I6fnPwVJ_ZASFZZehhSZobujkXQFaOojuMK9_v9x67iqbNTgQgSfP1Oue8MDuRrwLyrtkXOCFugpMFHrg"
 
 /**
  * What: localized `/services` marketing page from Stitch `our_services`.
@@ -45,7 +42,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ lng: 
           titleEmphasis={t("hero.titleEmphasis")}
           titleAfter={t("hero.titleAfter")}
           intro={t("hero.intro")}
-          imageSrc={HERO_IMAGE}
+          imageSrc={SITE_MEDIA.servicesHero}
           imageAlt={t("hero.imageAlt")}
         />
         <ServicesDetailCards

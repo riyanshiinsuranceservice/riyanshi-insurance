@@ -4,7 +4,7 @@ import { ServicesBentoSection } from "@/components/ui/services-bento-section"
 import { HomeTrustHighlights } from "@/components/home/home-trust-highlights"
 import { HomeWhyChoose } from "@/components/home/home-why-choose"
 import { PageWrapper } from "@/components/layout/page-wrapper"
-import { SITE_CONSULT_TEL, SITE_WHATSAPP_HREF } from "@/lib/site-contact"
+import { SITE_CONSULT_TEL, SITE_MEDIA, SITE_WHATSAPP_HREF } from "@/lib/site-contact"
 import { generateSeoMetaData } from "@/site-config"
 import { localizedContactHref, localizedHref } from "@/routes"
 import { getT } from "next-i18next/server"
@@ -44,6 +44,7 @@ export default async function Page({ params }: { params: Promise<{ lng: string }
           cardLabel={th("hero.cardLabel")}
           cardValue={th("hero.cardValue")}
           cardSub={th("hero.cardSub")}
+          heroImageSrc={SITE_MEDIA.homeHero}
         />
 
         <HomeTrustHighlights
@@ -69,6 +70,7 @@ export default async function Page({ params }: { params: Promise<{ lng: string }
           quote={th("why.quote")}
           eyebrow={th("why.eyebrow")}
           title={th("why.title")}
+          consultationImageSrc={SITE_MEDIA.homeWhyChoose}
           points={[
             {
               title: th("why.point1.title"),

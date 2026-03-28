@@ -1,3 +1,5 @@
+import { getSiteBaseUrl } from "@/site-config/site-config.constants"
+
 /**
  * What: compares the current document path + hash to a nav `href` (locale paths and/or `#fragment`).
  * Why: this app uses hash targets on the home route; `usePathname()` alone cannot detect those.
@@ -10,7 +12,7 @@ export function isActiveNavHref(
 ): boolean {
   try {
     const origin =
-      typeof window !== "undefined" ? window.location.origin : "https://example.com"
+      typeof window !== "undefined" ? window.location.origin : getSiteBaseUrl()
     const resolved = new URL(itemHref, origin)
     const itemPath =
       resolved.pathname.replace(/\/$/, "") === "" ? "/" : resolved.pathname.replace(/\/$/, "")
